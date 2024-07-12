@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */; };
+		ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */; };
 		ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */; };
 		ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B412C3BE162007AF0C8 /* ContentView.swift */; };
 		ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B432C3BE164007AF0C8 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
+		ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		ACD18B3C2C3BE162007AF0C8 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3App.swift; sourceTree = "<group>"; };
 		ACD18B412C3BE162007AF0C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACBBEAC62C40F1DD00761678 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACBBEAC72C40F1E200761678 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACBBEAD12C40FD1D00761678 /* Current Weather */,
+				ACBBEAD02C40F6B700761678 /* Daily Weather */,
+				ACD18B412C3BE162007AF0C8 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACBBEAC82C40F1E900761678 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACBBEAD02C40F6B700761678 /* Daily Weather */ = {
+			isa = PBXGroup;
+			children = (
+				ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */,
+			);
+			path = "Daily Weather";
+			sourceTree = "<group>";
+		};
+		ACBBEAD12C40FD1D00761678 /* Current Weather */ = {
+			isa = PBXGroup;
+			children = (
+				ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */,
+			);
+			path = "Current Weather";
+			sourceTree = "<group>";
+		};
 		ACD18B332C3BE162007AF0C8 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +95,10 @@
 		ACD18B3E2C3BE162007AF0C8 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				ACBBEAC62C40F1DD00761678 /* Model */,
+				ACBBEAC72C40F1E200761678 /* View */,
+				ACBBEAC82C40F1E900761678 /* ViewModel */,
 				ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */,
-				ACD18B412C3BE162007AF0C8 /* ContentView.swift */,
 				ACD18B432C3BE164007AF0C8 /* Assets.xcassets */,
 				ACD18B452C3BE164007AF0C8 /* Preview Content */,
 			);
@@ -137,6 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */,
+				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
 			);
@@ -280,6 +328,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +358,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
