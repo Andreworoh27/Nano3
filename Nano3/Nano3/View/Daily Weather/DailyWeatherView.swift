@@ -85,7 +85,7 @@ struct DailyWeatherView: View {
          .foregroundStyle(.white)
       }
       .frame(maxWidth: .infinity, alignment: .leading)
-      .padding()
+      .padding([.top, .horizontal])
    }
 }
 

@@ -34,7 +34,7 @@ struct CurrentWeatherView: View {
          Image(.ilustrasiPlaceholder)
       }
       .foregroundStyle(.white)
-      .padding()
+      .padding(.horizontal)
    }
 }
 

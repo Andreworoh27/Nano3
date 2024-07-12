@@ -11,21 +11,9 @@ struct ContentView: View {
    var body: some View {
       VStack(alignment: .leading){
          DailyWeatherView()
-         
          CurrentWeatherView()
-         
-         Divider()
-         
-         VStack(alignment: .leading){
-            Text("Hourly Forecast")
-            HStack{
-               Text("Jam")
-               
-               Spacer()
-               
-               Text("Suhu")
-            }
-         }
+         HourlyWeatherView()
+            .padding()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
       .background(.blue)

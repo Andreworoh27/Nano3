@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */; };
 		ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */; };
+		ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */; };
 		ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */; };
 		ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B412C3BE162007AF0C8 /* ContentView.swift */; };
 		ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B432C3BE164007AF0C8 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
+		ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		ACD18B3C2C3BE162007AF0C8 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3App.swift; sourceTree = "<group>"; };
 		ACD18B412C3BE162007AF0C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		ACBBEAC72C40F1E200761678 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACBBEAD42C41063000761678 /* Hourly Weather */,
 				ACBBEAD12C40FD1D00761678 /* Current Weather */,
 				ACBBEAD02C40F6B700761678 /* Daily Weather */,
 				ACD18B412C3BE162007AF0C8 /* ContentView.swift */,
@@ -74,6 +77,14 @@
 				ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */,
 			);
 			path = "Current Weather";
+			sourceTree = "<group>";
+		};
+		ACBBEAD42C41063000761678 /* Hourly Weather */ = {
+			isa = PBXGroup;
+			children = (
+				ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */,
+			);
+			path = "Hourly Weather";
 			sourceTree = "<group>";
 		};
 		ACD18B332C3BE162007AF0C8 = {
@@ -185,6 +196,7 @@
 			files = (
 				ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */,
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
+				ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
 			);
