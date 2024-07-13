@@ -20,7 +20,7 @@ class LocationServiceManager : NSObject,CLLocationManagerDelegate{
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = CLLocationDistance(50)
+//        locationManager.distanceFilter = CLLocationDistance(1000)
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
     }
@@ -48,7 +48,6 @@ class LocationServiceManager : NSObject,CLLocationManagerDelegate{
 
             geoCoder.reverseGeocodeLocation(lastLocation) { placemarks, _ in
                 guard let placemark = placemarks?.first else { return }
-                print(placemark.locality)
                 cityName = placemark.locality ?? "error cityName"
                 self.delegate?.getCityName(cityName)
             }

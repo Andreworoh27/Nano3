@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */; };
+		AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */; };
+		AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */; };
+		AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */; };
+		AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */; };
+		AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8C172C4278F200F50D03 /* DateExtension.swift */; };
 		ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */; };
 		ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */; };
 		ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */; };
@@ -17,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC3A8BE12C42366000F50D03 /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
+		AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceManager.swift; sourceTree = "<group>"; };
+		AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
+		AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewModel.swift; sourceTree = "<group>"; };
+		AC3A8C172C4278F200F50D03 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
@@ -38,6 +51,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC3A8BE32C42391C00F50D03 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */,
+				AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */,
+				AC3A8C172C4278F200F50D03 /* DateExtension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		AC3A8BE82C423F3F00F50D03 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */,
+				AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC3A8BEB2C423F9700F50D03 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		ACBBEAC62C40F1DD00761678 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +146,10 @@
 		ACD18B3E2C3BE162007AF0C8 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				AC3A8BEB2C423F9700F50D03 /* Protocols */,
+				AC3A8BE32C42391C00F50D03 /* Utility */,
+				AC3A8BE82C423F3F00F50D03 /* ViewModel */,
+				AC3A8BE12C42366000F50D03 /* Nano3.entitlements */,
 				ACBBEAC62C40F1DD00761678 /* Model */,
 				ACBBEAC72C40F1E200761678 /* View */,
 				ACBBEAC82C40F1E900761678 /* ViewModel */,
@@ -196,9 +240,15 @@
 			files = (
 				ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */,
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
+				AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */,
 				ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */,
+				AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
+				AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */,
+				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
+				AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */,
+				AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,12 +379,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nano3/Nano3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
 				DEVELOPMENT_TEAM = RQC43WJC4G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,12 +411,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nano3/Nano3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
 				DEVELOPMENT_TEAM = RQC43WJC4G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
