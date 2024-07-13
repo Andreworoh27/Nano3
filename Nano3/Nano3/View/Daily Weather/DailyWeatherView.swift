@@ -8,88 +8,90 @@
 import SwiftUI
 
 struct DailyWeatherView: View {
-   var body: some View {
-      VStack(alignment: .leading){
-         Text("Tangerang")
-            .fontWeight(.semibold)
+    @StateObject var locationViewModel = LocationViewModel()
+    
+    var body: some View {
+        VStack(alignment: .leading){
+            Text("\(locationViewModel.cityName)")
+                .fontWeight(.semibold)
+                .foregroundStyle(.white)
+            
+            HStack{
+                VStack{
+                    Text("Today")
+                        .font(.subheadline)
+                    
+                    Image(systemName: "sun.max.fill")
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                }
+                .padding(6)
+                .background(.white.opacity(0.3))
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .frame(maxWidth: .infinity)
+                
+                VStack{
+                    Text("Thu")
+                        .font(.subheadline)
+                    
+                    Image(systemName: "sun.max.fill")
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                }
+                .padding(6)
+                .frame(maxWidth: .infinity)
+                
+                VStack{
+                    Text("Fri")
+                        .font(.subheadline)
+                    
+                    Image(systemName: "sun.max.fill")
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                }
+                .padding(6)
+                .frame(maxWidth: .infinity)
+                
+                VStack{
+                    Text("Sat")
+                        .font(.subheadline)
+                    Image(systemName: "sun.max.fill")
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                }
+                .padding(6)
+                .frame(maxWidth: .infinity)
+                
+                VStack{
+                    Text("Sun")
+                        .font(.subheadline)
+                    Image(systemName: "sun.max.fill")
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                }
+                .padding(6)
+                .frame(maxWidth: .infinity)
+                
+                VStack{
+                    Text("Mon")
+                        .font(.subheadline)
+                    
+                    Image(systemName: "sun.max.fill")
+                        .renderingMode(.original)
+                        .imageScale(.large)
+                }
+                .padding(6)
+                .frame(maxWidth: .infinity)
+            }
+            .padding(.vertical, 19)
             .foregroundStyle(.white)
-         
-         HStack{
-            VStack{
-               Text("Today")
-                  .font(.subheadline)
-               
-               Image(systemName: "sun.max.fill")
-                  .renderingMode(.original)
-                  .imageScale(.large)
-            }
-            .padding(6)
-            .background(.white.opacity(0.3))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .frame(maxWidth: .infinity)
-            
-            VStack{
-               Text("Thu")
-                  .font(.subheadline)
-               
-               Image(systemName: "sun.max.fill")
-                  .renderingMode(.original)
-                  .imageScale(.large)
-            }
-            .padding(6)
-            .frame(maxWidth: .infinity)
-            
-            VStack{
-               Text("Fri")
-                  .font(.subheadline)
-               
-               Image(systemName: "sun.max.fill")
-                  .renderingMode(.original)
-                  .imageScale(.large)
-            }
-            .padding(6)
-            .frame(maxWidth: .infinity)
-            
-            VStack{
-               Text("Sat")
-                  .font(.subheadline)
-               Image(systemName: "sun.max.fill")
-                  .renderingMode(.original)
-                  .imageScale(.large)
-            }
-            .padding(6)
-            .frame(maxWidth: .infinity)
-            
-            VStack{
-               Text("Sun")
-                  .font(.subheadline)
-               Image(systemName: "sun.max.fill")
-                  .renderingMode(.original)
-                  .imageScale(.large)
-            }
-            .padding(6)
-            .frame(maxWidth: .infinity)
-            
-            VStack{
-               Text("Mon")
-                  .font(.subheadline)
-               
-               Image(systemName: "sun.max.fill")
-                  .renderingMode(.original)
-                  .imageScale(.large)
-            }
-            .padding(6)
-            .frame(maxWidth: .infinity)
-         }
-         .padding(.vertical, 19)
-         .foregroundStyle(.white)
-      }
-      .frame(maxWidth: .infinity, alignment: .leading)
-      .padding([.top, .horizontal])
-   }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding([.top, .horizontal])
+    }
 }
 
 #Preview {
-   DailyWeatherView()
-      .background(.black)
+    DailyWeatherView()
+        .background(.black)
 }
