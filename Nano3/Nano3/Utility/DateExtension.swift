@@ -17,7 +17,7 @@ extension Date{
     
     static func getDayString(inputDate : Date) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE" // EEEE gives the full day name
+        dateFormatter.dateFormat = "EE" // EEEE gives the full day name
         return dateFormatter.string(from: inputDate)
     }
 }

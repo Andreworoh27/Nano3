@@ -9,35 +9,38 @@ import SwiftUI
 
 struct CurrentWeatherView: View {
    var body: some View {
-      HStack(alignment: .bottom){
+      ZStack {
          VStack(alignment: .leading){
-            Text("Wednesday")
-               .font(Font.system(size: 24))
-            Text("July 10th")
-               .font(Font.system(size: 12))
-            
-            Text("")
-            
-            HStack(alignment: .center) {
-               Image(systemName: "moon.stars.fill")
-                  .imageScale(.large)
-               Text("30 C")
-                  .font(Font.system(size: 24))
+            VStack(alignment: .leading) {
+               Text("Best times to play outdoors")
+                  .fontWeight(.semibold)
+                  .font(.title3)
+               
+               Text("Today on July 10th")
+                  .padding(.bottom)
+               
+               HStack {
+                  Image(systemName: "figure.walk")
+                     .imageScale(.large)
+                  Text("06.00 - 11.00")
+                     .font(.title)
+                     .fontWeight(.bold)
+               }
+               Text("Enjoy outdoor playtime with your kids during these safe UV hours, with gentler sun and less risk of sunburn!")
+                  .font(.caption)
             }
-            
-            Text("H: 32")
-               .font(Font.system(size: 20))
-            Text("L: 28")
-               .font(Font.system(size: 20))
+            .frame(width: 275)
          }
-         
-         Image(.ilustrasiPlaceholder)
+         .frame(maxWidth: .infinity, alignment: .leading)
+         .foregroundStyle(.white)
+         .padding()
+         .background(.ultraThinMaterial)
+         .clipShape(RoundedRectangle(cornerRadius: 12))
       }
-      .foregroundStyle(.white)
-      .padding(.horizontal)
    }
 }
 
 #Preview {
    CurrentWeatherView()
+      .background(.blue)
 }

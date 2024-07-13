@@ -11,15 +11,16 @@ struct HourlyWeatherView: View {
    var body: some View {
       VStack(alignment: .leading){
          HStack{
-            Image(systemName: "calendar")
-            Text("HOURLY FORECAST")
+            Image(systemName: "clock")
+            Text("Available Playtime Hours: 6 AM - 6 PM")
+               .fontWeight(.bold)
          }
          
          Divider()
             .background(.white)
          
-         HStack{
-            Text("Now")
+         HStack(alignment: .center){
+            Text("06:00")
                .fontWeight(.semibold)
                .font(Font.system(size: 22))
             
@@ -28,18 +29,24 @@ struct HourlyWeatherView: View {
             Image(systemName: "moon.stars.fill")
                .imageScale(.large)
             
-            Text("27")
-               .fontWeight(.semibold)
-               .font(Font.system(size: 22))
-               .padding(.trailing, 24)
+            VStack(alignment: .leading){
+               Text("UVI: Low")
+                  .font(.caption)
+               RoundedRectangle(cornerRadius: 25)
+                  .frame(width: 100, height: 5)
+            }
             
+            Spacer()
+            
+            Image(systemName: "figure.walk")
+               .imageScale(.large)
          }
          
          Divider()
             .background(.white)
          
          HStack{
-            Text("01.00")
+            Text("07:00")
                .fontWeight(.semibold)
                .font(Font.system(size: 22))
             
@@ -48,17 +55,24 @@ struct HourlyWeatherView: View {
             Image(systemName: "moon.stars.fill")
                .imageScale(.large)
             
-            Text("27")
-               .fontWeight(.semibold)
-               .font(Font.system(size: 22))
-               .padding(.trailing, 24)
+            VStack(alignment: .leading){
+               Text("UVI: Low")
+                  .font(.caption)
+               RoundedRectangle(cornerRadius: 25)
+                  .frame(width: 100, height: 5)
+            }
+            
+            Spacer()
+            
+            Image(systemName: "figure.walk")
+               .imageScale(.large)
          }
          
          Divider()
             .background(.white)
          
          HStack{
-            Text("02.00")
+            Text("08:00")
                .fontWeight(.semibold)
                .font(Font.system(size: 22))
             
@@ -67,15 +81,22 @@ struct HourlyWeatherView: View {
             Image(systemName: "moon.stars.fill")
                .imageScale(.large)
             
-            Text("27")
-               .fontWeight(.semibold)
-               .font(Font.system(size: 22))
-               .padding(.trailing, 24)
+            VStack(alignment: .leading){
+               Text("UVI: Low")
+                  .font(.caption)
+               RoundedRectangle(cornerRadius: 25)
+                  .frame(width: 100, height: 5)
+            }
+            
+            Spacer()
+            
+            Image(systemName: "figure.walk")
+               .imageScale(.large)
          }
       }
       .padding()
       .frame(maxWidth: .infinity, alignment: .leading)
-      .background(.white.opacity(0.2))
+      .background(.ultraThinMaterial)
       .clipShape(RoundedRectangle(cornerRadius: 15))
       .foregroundStyle(.white)
    }
