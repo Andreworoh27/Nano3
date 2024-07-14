@@ -18,7 +18,7 @@ struct ContentView: View {
               description: "Enjoy outdoor playtime with your kids during these safe UV hours, with gentler sun and less risk of sunburn!"
           )
             .padding(.horizontal)
-         HourlyWeatherView()
+         //HourlyWeatherView()
             .padding()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
