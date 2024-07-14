@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */; };
+		AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */; };
+		AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */; };
 		AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */; };
 		AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */; };
 		AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherModel.swift; sourceTree = "<group>"; };
+		AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDelegate.swift; sourceTree = "<group>"; };
+		AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherDelegate.swift; sourceTree = "<group>"; };
 		AC3A8BE12C42366000F50D03 /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
 		AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceManager.swift; sourceTree = "<group>"; };
 		AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
@@ -51,6 +57,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC23CA4B2C43943C00A64862 /* Hourly Weather */ = {
+			isa = PBXGroup;
+			children = (
+				AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */,
+			);
+			path = "Hourly Weather";
+			sourceTree = "<group>";
+		};
+		AC23CA4E2C4394A900A64862 /* Daily Weather */ = {
+			isa = PBXGroup;
+			children = (
+				AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */,
+			);
+			path = "Daily Weather";
+			sourceTree = "<group>";
+		};
+		AC23CA4F2C4394B600A64862 /* Hourly Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Hourly Weather";
+			sourceTree = "<group>";
+		};
 		AC3A8BE32C42391C00F50D03 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +93,9 @@
 		AC3A8BE82C423F3F00F50D03 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AC23CA4F2C4394B600A64862 /* Hourly Weather */,
+				AC23CA4E2C4394A900A64862 /* Daily Weather */,
 				AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */,
-				AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -74,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */,
+				AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */,
+				AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -81,6 +113,7 @@
 		ACBBEAC62C40F1DD00761678 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC23CA4B2C43943C00A64862 /* Hourly Weather */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,13 +127,6 @@
 				ACD18B412C3BE162007AF0C8 /* ContentView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		ACBBEAC82C40F1E900761678 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ACBBEAD02C40F6B700761678 /* Daily Weather */ = {
@@ -152,7 +178,6 @@
 				AC3A8BE12C42366000F50D03 /* Nano3.entitlements */,
 				ACBBEAC62C40F1DD00761678 /* Model */,
 				ACBBEAC72C40F1E200761678 /* View */,
-				ACBBEAC82C40F1E900761678 /* ViewModel */,
 				ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */,
 				ACD18B432C3BE164007AF0C8 /* Assets.xcassets */,
 				ACD18B452C3BE164007AF0C8 /* Preview Content */,
@@ -239,12 +264,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */,
+				AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */,
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
 				AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */,
 				ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */,
 				AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */,
+				AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */,
+				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
 				AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */,
@@ -383,7 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
-				DEVELOPMENT_TEAM = RQC43WJC4G;
+				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
@@ -398,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = andrew.Nano3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulusmichael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -415,7 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
-				DEVELOPMENT_TEAM = RQC43WJC4G;
+				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
@@ -430,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = andrew.Nano3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulusmichael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

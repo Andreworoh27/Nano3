@@ -6,19 +6,11 @@
 //
 import SwiftUI
 
-struct HourlyWeather: Identifiable {
-    let id = UUID()
-    let time: String
-    let uvi: String
-    let symbolName: String
-    let activitySymbolName: String
-}
-
 struct HourlyWeatherView: View {
-    let hourlyWeatherData: [HourlyWeather] = [
-        HourlyWeather(time: "06:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk"),
-        HourlyWeather(time: "07:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk"),
-        HourlyWeather(time: "08:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk")
+    let hourlyWeatherData: [HourlyWeatherModel] = [
+        HourlyWeatherModel(time: "06:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk"),
+        HourlyWeatherModel(time: "07:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk"),
+        HourlyWeatherModel(time: "08:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk")
     ]
     
     var body: some View {
