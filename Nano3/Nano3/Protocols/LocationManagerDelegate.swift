@@ -12,3 +12,4 @@ protocol LocationManagerDelegate : AnyObject{
     func didUpdateLocation(_ location:CLLocation)
     func getCityName(_ cityName:String)
 }
+

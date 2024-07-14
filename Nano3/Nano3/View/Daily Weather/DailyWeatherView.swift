@@ -11,6 +11,7 @@ import WeatherKit
 struct DailyWeatherView: View {
    @StateObject var locationViewModel = LocationViewModel()
    @StateObject var dailyWeatherViewModel = DailyWeatherViewModel()
+   
    var body: some View {
       VStack(alignment: .leading){
          Text("\(locationViewModel.cityName)")
@@ -100,14 +101,14 @@ struct DailyWeatherView: View {
                            .font(.subheadline)
                      }
                      
-                     Image(systemName: "sun.max.fill")
+                     Image(systemName: "\(forecast.symbolName).fill")
                         .renderingMode(.original)
                         .imageScale(.large)
                   }
                   .padding(6)
+                  .frame(maxWidth: .infinity)
                   .background(.white.opacity(0.3))
                   .clipShape(RoundedRectangle(cornerRadius: 12))
-                  .frame(maxWidth: .infinity)
                }
             }
             .padding(.vertical, 19)
