@@ -4,102 +4,68 @@
 //
 //  Created by Paulus Michael on 12/07/24.
 //
-
 import SwiftUI
 
+struct HourlyWeather: Identifiable {
+    let id = UUID()
+    let time: String
+    let uvi: String
+    let symbolName: String
+    let activitySymbolName: String
+}
+
 struct HourlyWeatherView: View {
-   var body: some View {
-      VStack(alignment: .leading){
-         HStack{
-            Image(systemName: "clock")
-            Text("Available Playtime Hours: 6 AM - 6 PM")
-               .fontWeight(.bold)
-         }
-         
-         Divider()
-            .background(.white)
-         
-         HStack(alignment: .center){
-            Text("06:00")
-               .fontWeight(.semibold)
-               .font(Font.system(size: 22))
-            
-            Spacer()
-            
-            Image(systemName: "moon.stars.fill")
-               .imageScale(.large)
-            
-            VStack(alignment: .leading){
-               Text("UVI: Low")
-                  .font(.caption)
-               RoundedRectangle(cornerRadius: 25)
-                  .frame(width: 100, height: 5)
+    let hourlyWeatherData: [HourlyWeather] = [
+        HourlyWeather(time: "06:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk"),
+        HourlyWeather(time: "07:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk"),
+        HourlyWeather(time: "08:00", uvi: "Low", symbolName: "moon.stars.fill", activitySymbolName: "figure.walk")
+    ]
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: "clock")
+                Text("Available Playtime Hours: 6 AM - 6 PM")
+                    .fontWeight(.bold)
             }
             
-            Spacer()
+            Divider()
+                .background(.white)
             
-            Image(systemName: "figure.walk")
-               .imageScale(.large)
-         }
-         
-         Divider()
-            .background(.white)
-         
-         HStack{
-            Text("07:00")
-               .fontWeight(.semibold)
-               .font(Font.system(size: 22))
-            
-            Spacer()
-            
-            Image(systemName: "moon.stars.fill")
-               .imageScale(.large)
-            
-            VStack(alignment: .leading){
-               Text("UVI: Low")
-                  .font(.caption)
-               RoundedRectangle(cornerRadius: 25)
-                  .frame(width: 100, height: 5)
+            ForEach(hourlyWeatherData) { weather in
+                HStack(alignment: .center) {
+                    Text(weather.time)
+                        .fontWeight(.semibold)
+                        .font(Font.system(size: 22))
+                    
+                    Spacer()
+                    
+                    Image(systemName: weather.symbolName)
+                        .imageScale(.large)
+                    
+                    VStack(alignment: .leading) {
+                        Text("UVI: \(weather.uvi)")
+                            .font(.caption)
+                        RoundedRectangle(cornerRadius: 25)
+                            .frame(width: 100, height: 5)
+                    }
+                    
+                    Spacer()
+                    
+                    Image(systemName: weather.activitySymbolName)
+                        .imageScale(.large)
+                }
+                
+                Divider()
+                    .background(.white)
             }
-            
-            Spacer()
-            
-            Image(systemName: "figure.walk")
-               .imageScale(.large)
-         }
-         
-         Divider()
-            .background(.white)
-         
-         HStack{
-            Text("08:00")
-               .fontWeight(.semibold)
-               .font(Font.system(size: 22))
-            
-            Spacer()
-            
-            Image(systemName: "moon.stars.fill")
-               .imageScale(.large)
-            
-            VStack(alignment: .leading){
-               Text("UVI: Low")
-                  .font(.caption)
-               RoundedRectangle(cornerRadius: 25)
-                  .frame(width: 100, height: 5)
-            }
-            
-            Spacer()
-            
-            Image(systemName: "figure.walk")
-               .imageScale(.large)
-         }
-      }
-      .padding()
-      .frame(maxWidth: .infinity, alignment: .leading)
-      .background(.ultraThinMaterial)
-      .clipShape(RoundedRectangle(cornerRadius: 15))
-      .foregroundStyle(.white)
-   }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .foregroundStyle(.white)
+    }
 }
 
 #Preview {
