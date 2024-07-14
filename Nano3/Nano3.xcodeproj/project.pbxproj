@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */; };
-		AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */; };
-		AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */; };
 		AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */; };
 		AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */; };
 		AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */; };
@@ -23,12 +20,10 @@
 		ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B412C3BE162007AF0C8 /* ContentView.swift */; };
 		ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B432C3BE164007AF0C8 /* Assets.xcassets */; };
 		ACD18B472C3BE164007AF0C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */; };
+		B0A0030E2C43B52F00E7B98C /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A0030D2C43B52F00E7B98C /* HourlyWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherModel.swift; sourceTree = "<group>"; };
-		AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDelegate.swift; sourceTree = "<group>"; };
-		AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherDelegate.swift; sourceTree = "<group>"; };
 		AC3A8BE12C42366000F50D03 /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
 		AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceManager.swift; sourceTree = "<group>"; };
 		AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
@@ -44,6 +39,7 @@
 		ACD18B412C3BE162007AF0C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACD18B432C3BE164007AF0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B0A0030D2C43B52F00E7B98C /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HourlyWeather.swift; path = ../../../../HourlyWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,29 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC23CA4B2C43943C00A64862 /* Hourly Weather */ = {
-			isa = PBXGroup;
-			children = (
-				AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */,
-			);
-			path = "Hourly Weather";
-			sourceTree = "<group>";
-		};
-		AC23CA4E2C4394A900A64862 /* Daily Weather */ = {
-			isa = PBXGroup;
-			children = (
-				AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */,
-			);
-			path = "Daily Weather";
-			sourceTree = "<group>";
-		};
-		AC23CA4F2C4394B600A64862 /* Hourly Weather */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Hourly Weather";
-			sourceTree = "<group>";
-		};
 		AC3A8BE32C42391C00F50D03 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */,
-				AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */,
-				AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -172,11 +143,11 @@
 		ACD18B3E2C3BE162007AF0C8 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				B0A0030B2C43B51900E7B98C /* Model */,
 				AC3A8BEB2C423F9700F50D03 /* Protocols */,
 				AC3A8BE32C42391C00F50D03 /* Utility */,
 				AC3A8BE82C423F3F00F50D03 /* ViewModel */,
 				AC3A8BE12C42366000F50D03 /* Nano3.entitlements */,
-				ACBBEAC62C40F1DD00761678 /* Model */,
 				ACBBEAC72C40F1E200761678 /* View */,
 				ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */,
 				ACD18B432C3BE164007AF0C8 /* Assets.xcassets */,
@@ -191,6 +162,14 @@
 				ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B0A0030B2C43B51900E7B98C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0A0030D2C43B52F00E7B98C /* HourlyWeather.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +254,7 @@
 				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
+				B0A0030E2C43B52F00E7B98C /* HourlyWeather.swift in Sources */,
 				AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */,
 				AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */,
 			);
