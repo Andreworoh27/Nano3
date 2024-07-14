@@ -12,6 +12,7 @@ import CoreLocation
 class DailyWeatherViewModel: ObservableObject{
    
    @Published var dailyForecast : [DayWeather]?
+   @Published var hourlyForecast: [HourWeather]?
    
    private var weatherServiceManager : DailyWeatherDelegate
    
@@ -19,9 +20,16 @@ class DailyWeatherViewModel: ObservableObject{
       weatherServiceManager = WeatherServiceManager()
    }
    
-   @MainActor
    func getDailyWeatherForecast(location : CLLocation) async {
-      self.dailyForecast = await weatherServiceManager.getSevenDayForecast(location: location)
+      do{
+         let fetchedForecast = try await weatherServiceManager.getSevenDayForecast(location: location)
+         
+         DispatchQueue.main.async{
+            self.dailyForecast = fetchedForecast
+         }
+      }catch{
+         print("Error fetching daily forecast")
+      }
    }
    
    func areDatesSameDay(_ date1: Date, _ date2: Date) -> Bool {

@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import WeatherKit
 
-class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate{
+class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate, HourlyWeatherDelegate{
    
    private var weatherService : WeatherService
    
@@ -19,6 +19,20 @@ class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate{
    
    init(){
       weatherService = WeatherService.shared
+   }
+   
+   func getHourlyWeather(location: CLLocation, date: Date) async -> [HourWeather]? {
+      do{
+         let endDate = Calendar.current.date(byAdding: .hour, value: 13, to: date)!
+         
+         let hourlyWeather = try await weatherService.weather(for: location, including: .hourly(startDate: date, endDate: endDate)).forecast
+         
+         return hourlyWeather
+      }catch{
+         print("Error get hourly weather")
+      }
+      
+      return nil
    }
    
    func getCurrentWeather(location : CLLocation) async -> CurrentWeather?{
@@ -39,10 +53,9 @@ class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate{
       return nil
    }
    
-   
    func getSevenDayForecast(location : CLLocation) async -> [DayWeather]?{
       do{
-         let endDate = Calendar.current.date(byAdding: .day, value: 6, to: Date())
+         let endDate = Calendar.current.date(byAdding: .day, value: 8, to: Date())
          
          return try await weatherService.weather(for: location, including: .daily(startDate: Date(), endDate: endDate!)).forecast
          

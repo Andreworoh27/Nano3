@@ -15,10 +15,10 @@ struct DayIconView: View {
       VStack{
          if(Date.isToday(inputDate: date)){
             Text("Today")
-               .font(.subheadline)
+               .font(.caption)
          } else{
             Text("\(Date.getDayString(inputDate: date))")
-               .font(.subheadline)
+               .font(.caption)
          }
          
          Image(systemName: "\(symbolName).fill")

@@ -17,6 +17,8 @@
 		AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */; };
 		AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */; };
 		AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8C172C4278F200F50D03 /* DateExtension.swift */; };
+		ACB85C302C44143C00BBD445 /* HourlyWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB85C2F2C44143C00BBD445 /* HourlyWeatherDelegate.swift */; };
+		ACB85C322C44651D00BBD445 /* HourlyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB85C312C44651D00BBD445 /* HourlyWeatherViewModel.swift */; };
 		ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */; };
 		ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */; };
 		ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */; };
@@ -38,6 +40,8 @@
 		AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		AC3A8C132C425C8200F50D03 /* DailyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewModel.swift; sourceTree = "<group>"; };
 		AC3A8C172C4278F200F50D03 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		ACB85C2F2C44143C00BBD445 /* HourlyWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherDelegate.swift; sourceTree = "<group>"; };
+		ACB85C312C44651D00BBD445 /* HourlyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewModel.swift; sourceTree = "<group>"; };
 		ACBBEAC92C40F23200761678 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		ACBBEAD22C40FD9300761678 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		ACBBEAD52C41064500761678 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		AC23CA4F2C4394B600A64862 /* Hourly Weather */ = {
 			isa = PBXGroup;
 			children = (
+				ACB85C312C44651D00BBD445 /* HourlyWeatherViewModel.swift */,
 			);
 			path = "Hourly Weather";
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				AC3A8BEC2C423FAF00F50D03 /* LocationManagerDelegate.swift */,
 				AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */,
 				AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */,
+				ACB85C2F2C44143C00BBD445 /* HourlyWeatherDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -286,12 +292,14 @@
 				AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */,
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
 				AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */,
+				ACB85C302C44143C00BBD445 /* HourlyWeatherDelegate.swift in Sources */,
 				ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */,
 				AC23CA572C43B50B00A64862 /* DayIconView.swift in Sources */,
 				AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */,
 				AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */,
+				ACB85C322C44651D00BBD445 /* HourlyWeatherViewModel.swift in Sources */,
 				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
@@ -434,6 +442,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,6 +475,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 
 class LocationViewModel:LocationManagerDelegate, ObservableObject{
+   static let shared = LocationViewModel()
    
    @Published var currentUserLocation : CLLocation?
    @Published var cityName : String = "no city"
