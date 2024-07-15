@@ -11,7 +11,7 @@ import WeatherKit
 
 class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate, HourlyWeatherDelegate{
    
-   private var weatherService : WeatherService
+   private let weatherService : WeatherService
    
    //    @Published var weather : Weather?
    //    @Published var sevenDayForecast : [DayWeather]?
