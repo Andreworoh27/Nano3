@@ -1,37 +1,27 @@
-//
-//  CurrentWeatherView.swift
-//  Nano3
-//
-//  Created by Paulus Michael on 12/07/24.
-//
-
 import SwiftUI
 
 struct CurrentWeatherView: View {
-    var title: String
-    var date: String
-    var timeRange: String
-    var description: String
+    @StateObject var viewModel: CurrentWeatherViewModel
 
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    Text(title)
+                    Text(viewModel.title)
                         .fontWeight(.semibold)
                         .font(.title3)
 
-                    Text(date)
+                    Text(viewModel.date)
                         .padding(.bottom)
 
                     HStack {
                         Image(systemName: "figure.walk")
                             .imageScale(.large)
-                        Text(timeRange)
+                        Text(viewModel.timeRange)
                             .font(.title)
                             .fontWeight(.bold)
                     }
-                    Text(description)
+                    Text(viewModel.description)
                         .font(.caption)
                 }
                 .frame(width: 275)
@@ -45,12 +35,16 @@ struct CurrentWeatherView: View {
     }
 }
 
-
-#Preview {
-    CurrentWeatherView(
-        title: "Best times to play outdoors",
-        date: "Today on July 10th",
-        timeRange: "06.00 - 11.00",
-        description: "Enjoy outdoor playtime with your kids during these safe UV hours, with gentler sun and less risk of sunburn!"
-    )
-    .background(.blue)}
+struct CurrentWeatherView_Previews: PreviewProvider {
+    static var previews: some View {
+        CurrentWeatherView(
+            viewModel: CurrentWeatherViewModel(
+                title: "Best times to play outdoors",
+                date: "Today on July 10th",
+                timeRange: "06:00 - 11:00",
+                description: "Enjoy outdoor playtime with your kids during these safe UV hours, with gentler sun and less risk of sunburn!"
+            )
+        )
+        .background(Color.blue)
+    }
+}

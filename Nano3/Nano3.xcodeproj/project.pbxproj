@@ -27,6 +27,7 @@
 		ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B412C3BE162007AF0C8 /* ContentView.swift */; };
 		ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B432C3BE164007AF0C8 /* Assets.xcassets */; };
 		ACD18B472C3BE164007AF0C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */; };
+		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		ACD18B412C3BE162007AF0C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACD18B432C3BE164007AF0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		AC3A8BE82C423F3F00F50D03 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B0D38E562C450B71005E5B2B /* Current Weather */,
 				AC23CA4F2C4394B600A64862 /* Hourly Weather */,
 				AC23CA4E2C4394A900A64862 /* Daily Weather */,
 				AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */,
@@ -237,6 +240,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B0D38E562C450B71005E5B2B /* Current Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */,
+			);
+			path = "Current Weather";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +333,7 @@
 				ACB85C322C44651D00BBD445 /* HourlyWeatherViewModel.swift in Sources */,
 				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
+				B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
 				AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */,
 				AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */,
