@@ -11,7 +11,8 @@ import WeatherKit
 struct DailyWeatherView: View {
    @StateObject var locationViewModel = LocationViewModel.shared
    @StateObject var dailyWeatherViewModel = DailyWeatherViewModel()
-   @Binding var selectedDate: Date
+   @StateObject var hourlyWeatherViewModel = HourlyWeatherViewModel.shared
+//   @Binding var selectedDate: Date
    
    var body: some View {
       VStack(alignment: .center){
@@ -28,13 +29,14 @@ struct DailyWeatherView: View {
                if let dailyForecast = dailyWeatherViewModel.dailyForecast {
                   ForEach(dailyForecast, id: \.date){ forecast in
                      DayIconView(date: forecast.date, symbolName: forecast.symbolName)
-                        .background(dailyWeatherViewModel.areDatesSameDay(selectedDate, forecast.date) ? Material.ultraThinMaterial.opacity(1) : Material.thinMaterial.opacity(0))
+                        .background(dailyWeatherViewModel.areDatesSameDay(hourlyWeatherViewModel.selectedDate, forecast.date) ? Material.ultraThinMaterial.opacity(1) : Material.thinMaterial.opacity(0))
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .onTapGesture {
-                           selectedDate = forecast.date
+                           hourlyWeatherViewModel.selectedDate = forecast.date
+                           print(hourlyWeatherViewModel.selectedDate)
                         }
                         .frame(width: 50)
-                     
+                      
                   }
                   .padding(.vertical, 19)
                   .foregroundStyle(.white)
@@ -56,6 +58,6 @@ struct DailyWeatherView: View {
 }
 
 #Preview {
-   DailyWeatherView(selectedDate: .constant(Date()))
+   DailyWeatherView()
       .background(.black)
 }

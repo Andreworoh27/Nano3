@@ -15,9 +15,9 @@ struct HourlyWeatherView: View {
       // Add more data as needed
    ]
    
-   @StateObject var hourlyWeatherViewModel = HourlyWeatherViewModel()
+   @StateObject var hourlyWeatherViewModel = HourlyWeatherViewModel.shared
    var locationViewModel = LocationViewModel.shared
-   @Binding var selectedDate: Date
+//   @Binding var selectedDate: Date
    
    var body: some View {
       VStack(alignment: .leading) {
@@ -35,10 +35,9 @@ struct HourlyWeatherView: View {
 //               hour.condition
 //               hour.symbolName
 //               hour.uvIndex.value
-               Text("\(hour.condition)")
+//               Text("\(hour.condition)")
                
-            
-//               HourlyWeatherRowView(date: hour.date, symbol: hour.symbolName, uvi: hour.uvIndex.value)
+               Text("\(hour.date.formatted(date: .omitted, time: .shortened))")
 //               HourlyWeatherRowView(hourlyWeather: HourlyWeather( parsedData: ParsedHourlyWeatherData(time: hour.date, precipitation: hour.symbolName, uvi: hour.uvIndex.value)))
             }
          }
@@ -48,9 +47,23 @@ struct HourlyWeatherView: View {
       .background(.ultraThinMaterial)
       .clipShape(RoundedRectangle(cornerRadius: 15))
       .foregroundStyle(.white)
-      .task {
-         await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: Date.getSpecificDate(hour: 6, date: selectedDate)!)
-      }
+      // kalo datenya ganti
+      .onChange(of: hourlyWeatherViewModel.selectedDate, { oldValue, newValue in
+         print("trigger on change")
+         Task{
+            await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate)
+         }
+      })
+      // biar check kalo location != nil
+      .onChange(of: locationViewModel.currentUserLocation, { oldValue, newValue in
+         //fetch hourly forecast
+         Task{
+            await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate)
+         }
+      })
+//      .task {
+//         await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: Date.now)
+//      }
    }
 }
 
@@ -72,6 +85,6 @@ extension Precipitation {
 }
 
 #Preview {
-   HourlyWeatherView(selectedDate: .constant(Date()))
+   HourlyWeatherView()
       .background(.black)
 }

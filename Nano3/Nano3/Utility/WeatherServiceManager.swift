@@ -22,14 +22,24 @@ class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate, Hour
    }
    
    func getHourlyWeather(location: CLLocation, date: Date) async -> [HourWeather]? {
+      var components = Calendar.current.dateComponents([.year, .month, .day, .hour], from: date)
+      
+      if components.hour! > 18 {
+         return nil
+      }
       do{
-         let endDate = Calendar.current.date(byAdding: .hour, value: 13, to: date)!
+         components.hour = 18
+         let endDate = Calendar.current.date(from: components)
+         guard let validEndDate = endDate else {
+            print("Error creating end date")
+            return nil
+         }
          
-         let hourlyWeather = try await weatherService.weather(for: location, including: .hourly(startDate: date, endDate: endDate)).forecast
+         let hourlyWeather = try await weatherService.weather(for: location, including: .hourly(startDate: date, endDate: validEndDate)).forecast
          
          return hourlyWeather
       }catch{
-         print("Error get hourly weather")
+         print("Error")
       }
       
       return nil

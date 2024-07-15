@@ -13,7 +13,7 @@ struct ContentView: View {
    var body: some View {
       ScrollView {
          VStack(alignment: .leading){
-            DailyWeatherView(selectedDate: $selectedDate)
+            DailyWeatherView()
             CurrentWeatherView(
                title: "Best times to play outdoors",
                date: "Today on July 10th",
@@ -22,7 +22,7 @@ struct ContentView: View {
             )
             .padding(.horizontal)
             
-            HourlyWeatherView(selectedDate: $selectedDate)
+            HourlyWeatherView()
                .padding()
          }
       }
