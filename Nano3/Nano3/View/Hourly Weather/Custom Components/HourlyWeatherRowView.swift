@@ -8,27 +8,25 @@
 import SwiftUI
 
 struct HourlyWeatherRowView: View {
-   var date: Date
-   var symbol: String
-   var uvi: Int
+   var hourlyWeather: HourlyWeather
    
    var body: some View {
       Divider()
          .background(.white)
       
       HStack(alignment: .center) {
-         Text("\(date.formatted(date: .omitted, time: .shortened))")
+         Text(hourlyWeather.hour, style: .time)
             .fontWeight(.semibold)
             .font(Font.system(size: 22))
          
          Spacer()
          
-         Image(systemName: "\(symbol).fill")
+         Image(systemName: "\(hourlyWeather.precipitation.symbolName).fill")
             .renderingMode(.original)
             .imageScale(.large)
          
          VStack(alignment: .leading) {
-            Text("UVI: \(uvi)")
+            Text("UVI: \(hourlyWeather.uvi)")
                .font(.caption)
             RoundedRectangle(cornerRadius: 25)
                .frame(width: 100, height: 5)
@@ -36,8 +34,7 @@ struct HourlyWeatherRowView: View {
          
          Spacer()
          
-         //                  Image(systemName: weather.walkable ? "figure.walk" : "nosign")
-         //                     .imageScale(.large)
+         Image(systemName: hourlyWeather.walkable ? "figure.walk" : "nosign").imageScale(.large)
       }
       
       //               if index < hourlyWeatherData.count - 1 {
@@ -48,5 +45,5 @@ struct HourlyWeatherRowView: View {
 }
 
 #Preview {
-   HourlyWeatherRowView(date: Date(), symbol: "sun.max", uvi: 3)
+   HourlyWeatherRowView(hourlyWeather: HourlyWeather( parsedData: ParsedHourlyWeatherData(time: Calendar.current.date(bySettingHour: 6, minute:0, second:0, of: Date())!, precipitation: Precipitation.none, uvi: 2)))
 }

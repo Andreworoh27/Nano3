@@ -29,7 +29,17 @@ struct HourlyWeatherView: View {
          
          if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast {
             ForEach(hourlyForecast, id: \.date){ hour in
-               HourlyWeatherRowView(date: hour.date, symbol: hour.symbolName, uvi: hour.uvIndex.value)
+            
+               //yang mau diambil dari hour
+//               hour.date
+//               hour.condition
+//               hour.symbolName
+//               hour.uvIndex.value
+               Text("\(hour.condition)")
+               
+            
+//               HourlyWeatherRowView(date: hour.date, symbol: hour.symbolName, uvi: hour.uvIndex.value)
+//               HourlyWeatherRowView(hourlyWeather: HourlyWeather( parsedData: ParsedHourlyWeatherData(time: hour.date, precipitation: hour.symbolName, uvi: hour.uvIndex.value)))
             }
          }
       }
@@ -39,9 +49,7 @@ struct HourlyWeatherView: View {
       .clipShape(RoundedRectangle(cornerRadius: 15))
       .foregroundStyle(.white)
       .task {
-         //         Task{
          await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: Date.getSpecificDate(hour: 6, date: selectedDate)!)
-         //         }
       }
    }
 }
