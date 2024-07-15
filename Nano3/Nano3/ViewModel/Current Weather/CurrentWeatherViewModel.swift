@@ -6,24 +6,15 @@ class CurrentWeatherViewModel: ObservableObject {
     @Published var date: String
     @Published var timeRange: String
     @Published var description: String
-    
-    let dummyData: [HourlyWeather] = [
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 6, minute: 0, second: 0, of: Date())!, condition: .clear, uvi: 5, uviDesc: "Moderate", symbol: "sun.max"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 7, minute: 0, second: 0, of: Date())!, condition: .mostlyClear, uvi: 3, uviDesc: "Low", symbol: "sun.max"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!, condition: .breezy, uvi: 6, uviDesc: "Moderate", symbol: "wind"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!, condition: .windy, uvi: 2, uviDesc: "Low", symbol: "wind"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 10, minute: 0, second: 0, of: Date())!, condition: .partlyCloudy, uvi: 4, uviDesc: "Moderate", symbol: "cloud.sun"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 11, minute: 0, second: 0, of: Date())!, condition: .cloudy, uvi: 8, uviDesc: "High", symbol: "cloud"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!, condition: .blizzard, uvi: 0, uviDesc: "None", symbol: "cloud.rain"),
-        HourlyWeather(hour: Calendar.current.date(bySettingHour: 13, minute: 0, second: 0, of: Date())!, condition: .blizzard, uvi: 0, uviDesc: "None", symbol: "snow")
-    ]
+    var hourlyWeatherArray: [HourlyWeather] = []
 
-    init(title: String = "", date: String = "", timeRange: String = "", description: String = "") {
+    init(title: String = "", date: String = "", timeRange: String = "", description: String = "", hourlyWeatherArray: [HourlyWeather]) {
         self.title = title
         self.date = date
         self.timeRange = ""
         self.description = description
-        findBestTimeFrame(for: dummyData)
+        self.hourlyWeatherArray = hourlyWeatherArray
+        findBestTimeFrame(for: hourlyWeatherArray)
     }
     
     func findBestTimeFrame(for hourlyWeathers: [HourlyWeather]) {
