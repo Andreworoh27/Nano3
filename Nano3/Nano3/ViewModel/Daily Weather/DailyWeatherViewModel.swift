@@ -37,4 +37,5 @@ class DailyWeatherViewModel: ObservableObject{
       
       return components1 == components2
    }
+    
 }
