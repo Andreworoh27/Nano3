@@ -21,15 +21,7 @@ class DailyWeatherViewModel: ObservableObject{
    }
    
    func getDailyWeatherForecast(location : CLLocation) async {
-      do{
-         let fetchedForecast = try await weatherServiceManager.getSevenDayForecast(location: location)
-         
-         DispatchQueue.main.async{
-            self.dailyForecast = fetchedForecast
-         }
-      }catch{
-         print("Error fetching daily forecast")
-      }
+      self.dailyForecast = await weatherServiceManager.getSevenDayForecast(location: location)
    }
    
    func areDatesSameDay(_ date1: Date, _ date2: Date) -> Bool {

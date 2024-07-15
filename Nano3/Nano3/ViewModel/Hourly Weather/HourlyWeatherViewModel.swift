@@ -19,14 +19,6 @@ class HourlyWeatherViewModel: ObservableObject {
    }
    
    func getHourlyForecast(location : CLLocation, date: Date) async {
-      do{
-         let fetchedForecast = try await weatherServiceManager.getHourlyWeather(location: location, date: date)
-         
-         DispatchQueue.main.async{
-            self.hourlyForecast = fetchedForecast
-         }
-      }catch{
-         print("Error fetching hourly forecast")
-      }
+      self.hourlyForecast = await weatherServiceManager.getHourlyWeather(location: location, date: date)
    }
 }
