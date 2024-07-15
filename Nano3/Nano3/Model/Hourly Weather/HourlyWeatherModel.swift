@@ -6,41 +6,31 @@
 //
 
 import Foundation
-
-enum Precipitation: String {
-    case none = "None"
-    case rain = "Rain"
-    case snow = "Snow"
-    case partialCloud = "Partial Cloud"
-    case cloudy = "Cloudy"
-}
-
-struct ParsedHourlyWeatherData {
-    let time: Date
-    let precipitation: Precipitation
-    let uvi: Int
-}
+import WeatherKit
 
 class HourlyWeather: Identifiable {
-    let hour: Date
-    let precipitation: Precipitation
-    let uvi: Int
-    var walkable: Bool {
-        return isWalkable()
-    }
-    
-    init(parsedData: ParsedHourlyWeatherData) {
-        self.hour = parsedData.time
-        self.precipitation = parsedData.precipitation
-        self.uvi = parsedData.uvi
-    }
-    
-    private func isWalkable() -> Bool {
-        switch precipitation {
-        case .none, .partialCloud:
-            return uvi <= 7
-        case .rain, .snow, .cloudy:
-            return false
-        }
-    }
+   let hour: Date
+   let condition: WeatherCondition
+   let uvi: Int
+   let uviDesc: String
+   let symbol: String
+   var walkable: Bool
+   
+   init(hour: Date, condition: WeatherCondition, uvi: Int, uviDesc: String, symbol: String) {
+      self.hour = hour
+      self.condition = condition
+      self.uvi = uvi
+      self.symbol = symbol
+      self.uviDesc = uviDesc
+      self.walkable = HourlyWeather.isWalkable(condition: condition, uvi: uvi)
+   }
+   
+   private static func isWalkable(condition: WeatherCondition, uvi: Int) -> Bool {
+      switch condition {
+      case .clear, .mostlyClear, .breezy, .windy, .partlyCloudy:
+         return uvi <= 7
+      default:
+         return false
+      }
+   }
 }

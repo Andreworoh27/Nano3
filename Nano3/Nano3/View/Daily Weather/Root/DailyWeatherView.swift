@@ -10,9 +10,9 @@ import WeatherKit
 
 struct DailyWeatherView: View {
    @StateObject var locationViewModel = LocationViewModel.shared
-   @StateObject var dailyWeatherViewModel = DailyWeatherViewModel()
+   @StateObject var dailyWeatherViewModel = DailyWeatherViewModel.shared
    @StateObject var hourlyWeatherViewModel = HourlyWeatherViewModel.shared
-//   @Binding var selectedDate: Date
+   //   @Binding var selectedDate: Date
    
    var body: some View {
       VStack(alignment: .center){
@@ -36,7 +36,7 @@ struct DailyWeatherView: View {
                            print(hourlyWeatherViewModel.selectedDate)
                         }
                         .frame(width: 50)
-                      
+                     
                   }
                   .padding(.vertical, 19)
                   .foregroundStyle(.white)
@@ -46,12 +46,9 @@ struct DailyWeatherView: View {
       }
       .padding([.top, .leading])
       .task {
-         if (locationViewModel.currentUserLocation != nil){
-//            Task{
-               await dailyWeatherViewModel.getDailyWeatherForecast(location: locationViewModel.currentUserLocation!)
-//            }
-         }else{
-            print("No city for daily")
+         //            Task{
+         if let currentUserLocation = locationViewModel.currentUserLocation{
+            await dailyWeatherViewModel.getDailyWeatherForecast(location: currentUserLocation)
          }
       }
    }

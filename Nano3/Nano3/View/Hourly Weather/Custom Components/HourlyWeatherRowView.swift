@@ -21,12 +21,12 @@ struct HourlyWeatherRowView: View {
          
          Spacer()
          
-         Image(systemName: "\(hourlyWeather.precipitation.symbolName).fill")
+         Image(systemName: "\(hourlyWeather.symbol).fill")
             .renderingMode(.original)
             .imageScale(.large)
          
          VStack(alignment: .leading) {
-            Text("UVI: \(hourlyWeather.uvi)")
+            Text("UVI: \(hourlyWeather.uviDesc)")
                .font(.caption)
             RoundedRectangle(cornerRadius: 25)
                .frame(width: 100, height: 5)
@@ -45,5 +45,5 @@ struct HourlyWeatherRowView: View {
 }
 
 #Preview {
-   HourlyWeatherRowView(hourlyWeather: HourlyWeather( parsedData: ParsedHourlyWeatherData(time: Calendar.current.date(bySettingHour: 6, minute:0, second:0, of: Date())!, precipitation: Precipitation.none, uvi: 2)))
+   HourlyWeatherRowView(hourlyWeather: HourlyWeather(hour: Date(), condition: .clear, uvi: 5, uviDesc: "High", symbol: "sun.max"))
 }

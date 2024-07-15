@@ -28,7 +28,7 @@ class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate, Hour
          return nil
       }
       do{
-         components.hour = 18
+         components.hour = 19
          let endDate = Calendar.current.date(from: components)
          guard let validEndDate = endDate else {
             print("Error creating end date")
