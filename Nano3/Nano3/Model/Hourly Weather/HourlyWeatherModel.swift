@@ -9,21 +9,21 @@ import Foundation
 import WeatherKit
 
 class HourlyWeather: Identifiable {
-   let hour: Date
-   let condition: WeatherCondition
-   let uvi: Int
-   let uviDesc: String
-   let symbol: String
-   var walkable: Bool
+    let hour: Date
+    let condition: WeatherCondition
+    let uvi: Int
+    let uviDesc: String
+    let symbol: String
+    var walkable: Bool
    
-   init(hour: Date, condition: WeatherCondition, uvi: Int, uviDesc: String, symbol: String) {
-      self.hour = hour
-      self.condition = condition
-      self.uvi = uvi
-      self.symbol = symbol
-      self.uviDesc = uviDesc
-      self.walkable = HourlyWeather.isWalkable(condition: condition, uvi: uvi)
-   }
+    init(hour: Date, condition: WeatherCondition, uvi: Int, uviDesc: String, symbol: String) {
+        self.hour = hour
+        self.condition = condition
+        self.uvi = uvi
+        self.symbol = symbol
+        self.uviDesc = uviDesc
+        self.walkable = HourlyWeather.isWalkable(condition: condition, uvi: uvi)
+    }
    
    private static func isWalkable(condition: WeatherCondition, uvi: Int) -> Bool {
       switch condition {

@@ -37,4 +37,45 @@ class DailyWeatherViewModel: ObservableObject{
       
       return components1 == components2
    }
+    
+    func findBestTimeFrame(for hourlyWeathers: [HourlyWeather]) -> (start: Date, end: Date)? {
+        var bestStart: Date?
+        var bestEnd: Date?
+        var bestLength = 0
+        
+        var currentStart: Date?
+        var currentEnd: Date?
+        var currentLength = 0
+        
+        for weather in hourlyWeathers {
+            if weather.walkable {
+                if currentStart == nil {
+                    currentStart = weather.hour
+                }
+                currentEnd = weather.hour
+                currentLength += 1
+            } else {
+                if currentLength > bestLength {
+                    bestStart = currentStart
+                    bestEnd = currentEnd
+                    bestLength = currentLength
+                }
+                currentStart = nil
+                currentEnd = nil
+                currentLength = 0
+            }
+        }
+        
+        if currentLength > bestLength {
+            bestStart = currentStart
+            bestEnd = currentEnd
+        }
+        
+        if let start = bestStart, let end = bestEnd {
+            return (start, end)
+        }
+        
+        return nil
+    }
+    
 }
