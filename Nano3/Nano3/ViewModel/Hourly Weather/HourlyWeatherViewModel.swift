@@ -19,14 +19,17 @@ class HourlyWeatherViewModel: ObservableObject {
     
     init(){
         weatherServiceManager = WeatherServiceManager()
-        setSelectedDateInitialValue()
-    }
-    
-    func setSelectedDateInitialValue(){
+//        setSelectedDateInitialValue()
         DispatchQueue.main.async {
             self.selectedDate = Date.now
         }
     }
+    
+//    func setSelectedDateInitialValue(){
+//        DispatchQueue.main.async {
+//            self.selectedDate = Date.now
+//        }
+//    }
     
     func getHourlyForecast(location : CLLocation, date: Date) async {
         if (Date.isToday(inputDate: date)){

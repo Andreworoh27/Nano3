@@ -20,9 +20,9 @@ class LocationServiceManager : NSObject,CLLocationManagerDelegate{
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.distanceFilter = CLLocationDistance(1000)
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
+        locationManager.distanceFilter = CLLocationDistance(5000)
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -41,20 +41,6 @@ class LocationServiceManager : NSObject,CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last {
             delegate?.didUpdateLocation(lastLocation)
-            
-            var cityName = "no cityName"
-            
-            let geoCoder = CLGeocoder()
-
-            geoCoder.reverseGeocodeLocation(lastLocation) { placemarks, _ in
-                guard let placemark = placemarks?.first else { return }
-                cityName = placemark.locality ?? "error cityName"
-                self.delegate?.getCityName(cityName)
-            }
         }
     }
-    
-    func getCityName(location: CLLocation){
-    }
-
 }
