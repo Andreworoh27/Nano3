@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var notificationManager = NotificationManager()
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading){
@@ -24,6 +26,10 @@ struct ContentView: View {
                 
                 HourlyWeatherView()
                     .padding()
+            }.onAppear(){
+                if notificationManager.isNotifAuthGiven == false {
+                    notificationManager.requestNotifPermission()
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
