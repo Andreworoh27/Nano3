@@ -8,37 +8,38 @@
 import SwiftUI
 
 struct HourlyWeatherView: View {
-    @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
+   @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
    var locationViewModel = LocationViewModel.shared
    
    var body: some View {
       VStack(alignment: .leading) {
-         HStack {
-            Image(systemName: "clock")
-            Text("Available Playtime Hours: 6 AM - 6 PM")
-               .fontWeight(.bold)
-         }
-         
          if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast {
-             ForEach(hourlyForecast, id: \.hour){ hour in
-
-               HourlyWeatherRowView(hourlyWeather: hour) /*HourlyWeather(hour: hour.date, condition: hour.condition, uvi: hour.uvIndex.value, uviDesc: hour.uvIndex.category.description, symbol: hour.symbolName))*/
+            HStack {
+               Image(systemName: "clock")
+               Text("\(hourlyWeatherViewModel.selectedDate!.formatted(date: .complete, time: .omitted))")
+                  .fontWeight(.medium)
+                  .font(.system(size: 16))
+            }
+            
+            ForEach(hourlyForecast, id: \.hour){ hour in
+               
+               HourlyWeatherRowView(hourlyWeather: hour)
             }
          }
       }
       .padding()
       .frame(maxWidth: .infinity, alignment: .leading)
-      .background(.ultraThinMaterial)
+      .background(.ultraThinMaterial.opacity(0.5))
       .clipShape(RoundedRectangle(cornerRadius: 15))
       .foregroundStyle(.white)
       .onChange(of: hourlyWeatherViewModel.selectedDate, { oldValue, newValue in
-          
-          if(locationViewModel.currentUserLocation != nil)
-          {
-              Task{
-                 await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate!)
-              }
-          }
+         
+         if(locationViewModel.currentUserLocation != nil)
+         {
+            Task{
+               await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate!)
+            }
+         }
       })
    }
 }

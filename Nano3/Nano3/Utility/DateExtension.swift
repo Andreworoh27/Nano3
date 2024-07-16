@@ -15,7 +15,7 @@ extension Date{
       return false
    }
    
-   static func getDayString(inputDate : Date) -> String{
+   static func getDayStringShort(inputDate : Date) -> String{
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = "EE" // EEEE gives the full day name
       return dateFormatter.string(from: inputDate)
