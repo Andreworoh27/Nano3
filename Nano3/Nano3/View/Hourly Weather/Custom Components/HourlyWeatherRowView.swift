@@ -16,7 +16,7 @@ struct HourlyWeatherRowView: View {
       
       HStack(alignment: .center) {
          Text(hourlyWeather.hour, style: .time)
-            .fontWeight(.semibold)
+            .fontWeight(.medium)
             .font(Font.system(size: 22))
          
          Spacer()
@@ -27,7 +27,9 @@ struct HourlyWeatherRowView: View {
          
          VStack(alignment: .leading) {
             Text("UVI: \(hourlyWeather.uviDesc)")
-               .font(.caption)
+               .font(.system(size: 12))
+               .fontWeight(.semibold)
+            
             RoundedRectangle(cornerRadius: 25)
                .frame(width: 100, height: 5)
          }

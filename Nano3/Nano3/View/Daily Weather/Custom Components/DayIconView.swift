@@ -16,9 +16,11 @@ struct DayIconView: View {
          if(Date.isToday(inputDate: date)){
             Text("Today")
                .font(.caption)
+               .fontWeight(.semibold)
          } else{
-            Text("\(Date.getDayString(inputDate: date))")
+            Text("\(Date.getDayStringShort(inputDate: date))")
                .font(.caption)
+               .fontWeight(.medium)
          }
          
          Image(systemName: "\(symbolName).fill")

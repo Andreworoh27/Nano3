@@ -31,6 +31,7 @@
 		ACF7CF7F2C4629E2008B1030 /* CircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */; };
 		ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */; };
 		ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */; };
+		ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */; };
 		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimator.swift; sourceTree = "<group>"; };
 		ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
 		ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
+		ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbianceBackgroundView.swift; sourceTree = "<group>"; };
 		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 				ACBBEAD12C40FD1D00761678 /* Current Weather */,
 				ACBBEAD02C40F6B700761678 /* Daily Weather */,
 				ACD18B412C3BE162007AF0C8 /* ContentView.swift */,
+				ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */,
 				AC23CA572C43B50B00A64862 /* DayIconView.swift in Sources */,
 				AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */,
+				ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */,
 				ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */,

@@ -8,31 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        ScrollView {
+   @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
+   
+   var body: some View {
+      ScrollView {
+         if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast{
             VStack(alignment: .leading){
-                DailyWeatherView()
-                //             CurrentWeatherView(
-                //                         viewModel: CurrentWeatherViewModel(
-                //                             title: "Best times to play outdoors",
-                //                             date: "Today on July 10th",
-                //                             timeRange: "06:00 - 11:00",
-                //                             description: "Enjoy outdoor playtime with your kids during these safe UV hours, with gentler sun and less risk of sunburn!"
-                //                         )
-                //                     )
-                //            .padding(.horizontal)
-                
-                HourlyWeatherView()
-                    .padding()
+               DailyWeatherView()
+               CurrentWeatherView()
+                  .background(
+                     AmbianceBackgroundView(colors: [
+                        [.yellow500, .green500],
+                        [.blue500, .green500],
+                        [.yellow500, .green500],
+                     ])
+                     .clipped()
+                  )
+                  .clipShape(RoundedRectangle(cornerRadius: 12))
+                  .padding(.horizontal)
+               
+               HourlyWeatherView()
+                  .padding()
             }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(.blue)
-    }
+         }
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+      .background(
+         Image(.sunny)
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea()
+      )
+      //      .background(
+      //         AmbianceBackgroundView(colors: [
+      //            [Color.blue300, Color.blue400],
+      //            [Color.blue700, Color.blue800],
+      //            [Color.blue300, Color.blue400],
+      //            [Color.blue700, Color.blue800],
+      //         ])
+      //      )
+   }
 }
 
 #Preview {
-    ContentView()
-        .environmentObject(HourlyWeatherViewModel.shared)
-        .environmentObject(DailyWeatherViewModel.shared)
+   ContentView()
+      .environmentObject(HourlyWeatherViewModel.shared)
+      .environmentObject(DailyWeatherViewModel.shared)
 }
