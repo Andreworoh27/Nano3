@@ -10,5 +10,5 @@ import WeatherKit
 import CoreLocation
 
 protocol HourlyWeatherDelegate {
-   func getHourlyWeather(location: CLLocation, date: Date) async -> [HourWeather]?
+   func getHourlyWeather(location: CLLocation, date: Date) async -> [HourlyWeather]?
 }

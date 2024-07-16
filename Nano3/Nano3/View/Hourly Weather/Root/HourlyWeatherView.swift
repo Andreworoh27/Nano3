@@ -20,9 +20,9 @@ struct HourlyWeatherView: View {
          }
          
          if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast {
-            ForEach(hourlyForecast, id: \.date){ hour in
+             ForEach(hourlyForecast, id: \.hour){ hour in
 
-               HourlyWeatherRowView(hourlyWeather: HourlyWeather(hour: hour.date, condition: hour.condition, uvi: hour.uvIndex.value, uviDesc: hour.uvIndex.category.description, symbol: hour.symbolName))
+               HourlyWeatherRowView(hourlyWeather: hour) /*HourlyWeather(hour: hour.date, condition: hour.condition, uvi: hour.uvIndex.value, uviDesc: hour.uvIndex.category.description, symbol: hour.symbolName))*/
             }
          }
       }

@@ -21,7 +21,7 @@ class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate, Hour
       weatherService = WeatherService.shared
    }
    
-   func getHourlyWeather(location: CLLocation, date: Date) async -> [HourWeather]? {
+   func getHourlyWeather(location: CLLocation, date: Date) async -> [HourlyWeather]? {
       var components = Calendar.current.dateComponents([.year, .month, .day, .hour], from: date)
       
       if components.hour! > 18 {
@@ -35,9 +35,15 @@ class WeatherServiceManager : CurrentWeatherDelegate, DailyWeatherDelegate, Hour
             return nil
          }
          
-         let hourlyWeather = try await weatherService.weather(for: location, including: .hourly(startDate: date, endDate: validEndDate)).forecast
-         
-         return hourlyWeather
+          let hourlyWeather = try await weatherService.weather(for: location, including: .hourly(startDate: date, endDate: validEndDate)).forecast
+          var hourlyWeatherData : [HourlyWeather] = []
+          hourlyWeather.forEach { hourWeather in
+              
+              let newHourWeather = HourlyWeather(hour: hourWeather.date, condition: hourWeather.condition, uvi: hourWeather.uvIndex.value, uviDesc: hourWeather.uvIndex.category.description, symbol: hourWeather.symbolName)
+              hourlyWeatherData.append(newHourWeather)
+          }
+         return hourlyWeatherData
+          
       }catch{
          print("Error")
       }

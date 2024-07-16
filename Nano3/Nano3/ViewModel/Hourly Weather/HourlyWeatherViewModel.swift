@@ -11,7 +11,7 @@ import CoreLocation
 
 class HourlyWeatherViewModel: ObservableObject {
     @Published var selectedDate: Date?
-    @Published var hourlyForecast : [HourWeather]?
+    @Published var hourlyForecast : [HourlyWeather]?
     
     static let shared = HourlyWeatherViewModel()
     
