@@ -33,9 +33,15 @@ struct DailyWeatherView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 12))
                                 .onTapGesture {
                                     if(Date.isToday(inputDate: forecast.date)){
-                                        hourlyWeatherViewModel.selectedDate = Date.now
+                                        DispatchQueue.main.async{
+                                            hourlyWeatherViewModel.selectedDate = Date.now
+                                        }
+                                        
                                     }else{
-                                        hourlyWeatherViewModel.selectedDate = forecast.date
+                                        DispatchQueue.main.async{
+                                            hourlyWeatherViewModel.selectedDate = forecast.date
+                                        }
+                                        
                                     }
                                 }
                                 .frame(width: 50)
