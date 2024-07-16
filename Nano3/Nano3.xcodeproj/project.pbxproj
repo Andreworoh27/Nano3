@@ -27,6 +27,10 @@
 		ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B412C3BE162007AF0C8 /* ContentView.swift */; };
 		ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B432C3BE164007AF0C8 /* Assets.xcassets */; };
 		ACD18B472C3BE164007AF0C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */; };
+		ACF7CF7E2C4629E2008B1030 /* AnimationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF792C4629E2008B1030 /* AnimationProperties.swift */; };
+		ACF7CF7F2C4629E2008B1030 /* CircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */; };
+		ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */; };
+		ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */; };
 		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,10 @@
 		ACD18B412C3BE162007AF0C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACD18B432C3BE164007AF0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACF7CF792C4629E2008B1030 /* AnimationProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationProperties.swift; sourceTree = "<group>"; };
+		ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimator.swift; sourceTree = "<group>"; };
+		ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
+		ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
 		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +227,7 @@
 		ACD18B3E2C3BE162007AF0C8 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				ACF7CF7D2C4629E2008B1030 /* Ambiance */,
 				AC3A8BEB2C423F9700F50D03 /* Protocols */,
 				AC3A8BE32C42391C00F50D03 /* Utility */,
 				AC3A8BE82C423F3F00F50D03 /* ViewModel */,
@@ -238,6 +247,17 @@
 				ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACF7CF7D2C4629E2008B1030 /* Ambiance */ = {
+			isa = PBXGroup;
+			children = (
+				ACF7CF792C4629E2008B1030 /* AnimationProperties.swift */,
+				ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */,
+				ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */,
+				ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */,
+			);
+			path = Ambiance;
 			sourceTree = "<group>";
 		};
 		B0D38E562C450B71005E5B2B /* Current Weather */ = {
@@ -323,13 +343,17 @@
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
 				AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */,
 				ACB85C302C44143C00BBD445 /* HourlyWeatherDelegate.swift in Sources */,
+				ACF7CF7E2C4629E2008B1030 /* AnimationProperties.swift in Sources */,
 				ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */,
+				ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */,
 				AC23CA572C43B50B00A64862 /* DayIconView.swift in Sources */,
 				AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */,
+				ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */,
 				AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */,
 				AC9208882C449EA10049B90A /* HourlyWeatherRowView.swift in Sources */,
+				ACF7CF7F2C4629E2008B1030 /* CircleAnimator.swift in Sources */,
 				ACB85C322C44651D00BBD445 /* HourlyWeatherViewModel.swift in Sources */,
 				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
@@ -471,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
-				DEVELOPMENT_TEAM = RQC43WJC4G;
+				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
@@ -487,7 +511,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = andrew.Nano3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulusmichael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -504,7 +528,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
-				DEVELOPMENT_TEAM = RQC43WJC4G;
+				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
@@ -520,7 +544,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = andrew.Nano3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulusmichael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
