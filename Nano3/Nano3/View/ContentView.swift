@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
    @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
+  @ObservedObject var notificationManager = NotificationManager()
    
    var body: some View {
       ScrollView {
@@ -30,23 +31,20 @@ struct ContentView: View {
                HourlyWeatherView()
                   .padding()
             }
-         }
+          }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+      .onAppear(){
+          if notificationManager.isNotifAuthGiven == false {
+             notificationManager.requestNotifPermission()
+          }
+      }
       .background(
          Image(.sunny)
             .resizable()
             .scaledToFill()
             .ignoresSafeArea()
       )
-      //      .background(
-      //         AmbianceBackgroundView(colors: [
-      //            [Color.blue300, Color.blue400],
-      //            [Color.blue700, Color.blue800],
-      //            [Color.blue300, Color.blue400],
-      //            [Color.blue700, Color.blue800],
-      //         ])
-      //      )
    }
 }
 

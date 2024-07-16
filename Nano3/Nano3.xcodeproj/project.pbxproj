@@ -32,6 +32,7 @@
 		ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */; };
 		ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */; };
 		ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */; };
+		B04C95B52C462A5E00A32F30 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C95B42C462A5E00A32F30 /* NotificationManager.swift */; };
 		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
 		ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
 		ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbianceBackgroundView.swift; sourceTree = "<group>"; };
+		B04C95B42C462A5E00A32F30 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */,
 				AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */,
 				AC3A8C172C4278F200F50D03 /* DateExtension.swift */,
+				B04C95B42C462A5E00A32F30 /* NotificationManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			files = (
 				ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */,
 				AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */,
+				B04C95B52C462A5E00A32F30 /* NotificationManager.swift in Sources */,
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
 				AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */,
 				ACB85C302C44143C00BBD445 /* HourlyWeatherDelegate.swift in Sources */,
