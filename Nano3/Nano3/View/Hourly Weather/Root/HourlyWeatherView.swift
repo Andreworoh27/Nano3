@@ -28,7 +28,7 @@ struct HourlyWeatherView: View {
       }
       .padding()
       .frame(maxWidth: .infinity, alignment: .leading)
-      .background(.ultraThinMaterial.opacity(0.5))
+      .background(.ultraThinMaterial.opacity(0.2))
       .clipShape(RoundedRectangle(cornerRadius: 15))
       .foregroundStyle(.white)
       .onChange(of: hourlyWeatherViewModel.selectedDate, { oldValue, newValue in

@@ -13,16 +13,17 @@ struct ContentView: View {
    
    var body: some View {
       ScrollView {
-         VStack(alignment: .leading){
-            DailyWeatherView()
-            CurrentWeatherView()
-               .clipShape(RoundedRectangle(cornerRadius: 12))
-               .padding(.horizontal)
-            
-            HourlyWeatherView()
-               .padding()
-         }
-         
+//         if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast{
+            VStack(alignment: .leading){
+               DailyWeatherView()
+               CurrentWeatherView()
+                  .clipShape(RoundedRectangle(cornerRadius: 12))
+                  .padding(.horizontal)
+               
+               HourlyWeatherView()
+                  .padding()
+            }
+//         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
       .onAppear(){

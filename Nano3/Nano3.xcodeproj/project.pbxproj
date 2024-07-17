@@ -38,6 +38,7 @@
 		ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */; };
 		ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */; };
 		ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */; };
+		ACF7CF852C477895008B1030 /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */; };
 		B04C95B52C462A5E00A32F30 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C95B42C462A5E00A32F30 /* NotificationManager.swift */; };
 		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
 		ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
 		ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbianceBackgroundView.swift; sourceTree = "<group>"; };
+		ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
 		B04C95B42C462A5E00A32F30 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +194,7 @@
 				AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */,
 				AC3A8C172C4278F200F50D03 /* DateExtension.swift */,
 				B04C95B42C462A5E00A32F30 /* NotificationManager.swift */,
+				ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
 				B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */,
+				ACF7CF852C477895008B1030 /* SegmentedProgressView.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
 				AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */,
 				AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */,
@@ -680,6 +684,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SunSense;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -714,6 +719,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SunSense;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

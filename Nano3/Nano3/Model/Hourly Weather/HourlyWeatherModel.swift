@@ -54,3 +54,4 @@ extension HourlyWeather {
       }
    }
 }
+
