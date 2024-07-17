@@ -22,7 +22,6 @@ struct HourlyWeatherView: View {
             }
             
             ForEach(hourlyForecast, id: \.hour){ hour in
-               
                HourlyWeatherRowView(hourlyWeather: hour)
             }
          }

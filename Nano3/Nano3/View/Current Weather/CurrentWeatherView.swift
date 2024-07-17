@@ -5,23 +5,37 @@ struct CurrentWeatherView: View {
    
    var body: some View {
       ZStack {
+         AmbianceBackgroundView(colors: [
+            [.yellow500, .green500],
+            [.blue500, .green500],
+            [.yellow500, .green500],
+            [.blue500, .green500],
+            [.blue500, .green500],
+            [.yellow500, .green500],
+         ])
+         .ignoresSafeArea()
+         .frame(height: 35)
+         
          VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                Text(viewModel.title)
                   .fontWeight(.semibold)
                   .font(.system(size: 20))
                
-               HStack {
-                  Image(systemName: "figure.walk")
-                     .imageScale(.large)
-                     .font(.title)
-                  Text(viewModel.timeRange)
-                     .font(.system(size: 40))
-                     .fontWeight(.bold)
+               if !viewModel.timeRange.isEmpty{
+                  HStack {
+                     Image(systemName: "figure.walk")
+                        .imageScale(.large)
+                        .font(.title)
+                     Text(viewModel.timeRange)
+                        .font(.system(size: 40))
+                        .fontWeight(.bold)
+                  }
+                  .padding(.vertical, 2)
                }
-               .padding(.vertical, 2)
                Text(viewModel.description)
                   .font(.system(size: 14))
+                  .padding(.top, 8)
                   .fontWeight(.semibold)
             }
          }
@@ -37,5 +51,6 @@ struct CurrentWeatherView_Previews: PreviewProvider {
    static var previews: some View {
       CurrentWeatherView()
          .background(Color.blue)
+         .environmentObject(CurrentWeatherViewModel.shared)
    }
 }

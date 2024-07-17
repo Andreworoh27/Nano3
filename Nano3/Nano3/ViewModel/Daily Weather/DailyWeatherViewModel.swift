@@ -21,8 +21,8 @@ class DailyWeatherViewModel: ObservableObject{
       weatherServiceManager = WeatherServiceManager()
    }
    
-   func getDailyWeatherForecast(location : CLLocation) async {
-      let fetched = await weatherServiceManager.getSevenDayForecast(location: location)
+   func getDailyWeatherForecast(location : CLLocation, date: Date) async {
+      let fetched = await weatherServiceManager.getSevenDayForecast(location: location, date: date)
       
       DispatchQueue.main.async{
          self.dailyForecast = fetched

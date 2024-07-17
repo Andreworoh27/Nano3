@@ -23,7 +23,7 @@ struct DailyWeatherView: View {
                     if let dailyForecast = dailyWeatherViewModel.dailyForecast {
                         ForEach(dailyForecast, id: \.date) { forecast in
                             DayIconView(date: forecast.date, symbolName: forecast.symbolName)
-                                .background(dailyWeatherViewModel.areDatesSameDay(hourlyWeatherViewModel.selectedDate ?? Date(), forecast.date) ? Material.ultraThinMaterial.opacity(1) : Material.thinMaterial.opacity(0))
+                              .background(dailyWeatherViewModel.areDatesSameDay(hourlyWeatherViewModel.selectedDate ?? Date(), forecast.date) ? Material.ultraThinMaterial.opacity(0.7) : Material.thinMaterial.opacity(0))
                                 .clipShape(RoundedRectangle(cornerRadius: 12))
                                 .onTapGesture {
                                     DispatchQueue.main.async {
@@ -42,7 +42,8 @@ struct DailyWeatherView: View {
         .padding([.top])
         .task {
             if let currentUserLocation = locationViewModel.currentUserLocation {
-                await dailyWeatherViewModel.getDailyWeatherForecast(location: currentUserLocation)
+               
+               await dailyWeatherViewModel.getDailyWeatherForecast(location: currentUserLocation, date: Date())
                 DispatchQueue.main.async {
                     if let todayForecast = dailyWeatherViewModel.dailyForecast?.first(where: { Date.isToday(inputDate: $0.date) }) {
                         hourlyWeatherViewModel.selectedDate = todayForecast.date

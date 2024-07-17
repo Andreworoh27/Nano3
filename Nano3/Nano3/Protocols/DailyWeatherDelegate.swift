@@ -10,5 +10,5 @@ import CoreLocation
 import WeatherKit
 
 protocol DailyWeatherDelegate {
-   func getSevenDayForecast(location: CLLocation) async -> [DayWeather]?
+   func getSevenDayForecast(location: CLLocation, date: Date) async -> [DayWeather]?
 }

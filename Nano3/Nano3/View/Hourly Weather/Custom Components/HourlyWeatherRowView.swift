@@ -13,25 +13,31 @@ struct HourlyWeatherRowView: View {
    var body: some View {
       Divider()
          .background(.white)
-      
       HStack(alignment: .center) {
          Text(hourlyWeather.hour, style: .time)
             .fontWeight(.medium)
             .font(Font.system(size: 22))
+            .frame(width: 75, alignment: .leading)
          
          Spacer()
          
-         Image(systemName: "\(hourlyWeather.symbol).fill")
-            .renderingMode(.original)
-            .imageScale(.large)
-         
-         VStack(alignment: .leading) {
-            Text("UVI: \(hourlyWeather.uviDesc)")
-               .font(.system(size: 12))
-               .fontWeight(.semibold)
-            
-            RoundedRectangle(cornerRadius: 25)
-               .frame(width: 100, height: 5)
+         VStack {
+            HStack {
+               Image(systemName: "\(hourlyWeather.symbol).fill")
+                  .renderingMode(.original)
+                  .imageScale(.large)
+                  .frame(width: 24)
+               
+               VStack(alignment: .leading) {
+                  Text("UVI: \(hourlyWeather.uviDesc)")
+                     .font(.system(size: 12))
+                     .fontWeight(.semibold)
+                  ProgressView(value: Double(hourlyWeather.uvi), total: 10)
+                     .frame(width: 100)
+                     .tint(hourlyWeather.uviColor)
+                     .scaleEffect(x: 1, y: 1.5)
+               }
+            }
          }
          
          Spacer()
