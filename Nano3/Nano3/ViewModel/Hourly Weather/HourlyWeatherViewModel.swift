@@ -12,6 +12,7 @@ class HourlyWeatherViewModel: ObservableObject {
             }
         }
     }
+   
     @Published var hourlyForecast: [HourlyWeather]? {
         didSet {
             if let hourlyForecast = hourlyForecast {

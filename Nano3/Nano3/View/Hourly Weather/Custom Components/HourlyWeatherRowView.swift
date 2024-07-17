@@ -13,30 +13,39 @@ struct HourlyWeatherRowView: View {
    var body: some View {
       Divider()
          .background(.white)
-      
       HStack(alignment: .center) {
          Text(hourlyWeather.hour, style: .time)
             .fontWeight(.medium)
             .font(Font.system(size: 22))
+            .frame(width: 75, alignment: .leading)
+   
          
-         Spacer()
-         
-         Image(systemName: "\(hourlyWeather.symbol).fill")
-            .renderingMode(.original)
-            .imageScale(.large)
-         
-         VStack(alignment: .leading) {
-            Text("UVI: \(hourlyWeather.uviDesc)")
-               .font(.system(size: 12))
-               .fontWeight(.semibold)
+         HStack {
+            Image(systemName: "\(hourlyWeather.symbol).fill")
+               .renderingMode(.original)
+               .imageScale(.large)
+               .frame(width: 24)
+               .padding(.leading)
+               .padding(.trailing, 32)
             
-            RoundedRectangle(cornerRadius: 25)
-               .frame(width: 100, height: 5)
-         }
+            VStack(alignment: .leading) {
+               Text("UVI: \(hourlyWeather.uviDesc)")
+                  .font(.system(size: 12))
+                  .fontWeight(.semibold)
+               
+               SegmentedProgressView(value: Double(hourlyWeather.uvi), maxValue: 10, segmentCount: 5, color: hourlyWeather.uviColor)
+                  .frame(width: 100)
+            }
+            
+            Spacer()
+            
+         }.frame(height: 30)
          
          Spacer()
          
-         Image(systemName: hourlyWeather.walkable ? "figure.walk" : "nosign").imageScale(.large)
+         Image(systemName: "figure.walk")
+            .imageScale(.large)
+            .opacity(hourlyWeather.walkable ? 1 : 0)
       }
       
       //               if index < hourlyWeatherData.count - 1 {

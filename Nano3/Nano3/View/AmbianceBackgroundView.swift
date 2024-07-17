@@ -33,7 +33,7 @@ struct AmbianceBackgroundView: View {
          }
       }
       .blur(radius: 25)
-      .background(GradientColors.backgroundColor)
+//      .background(GradientColors.backgroundColor)
       .onDisappear{
          timer.upstream.connect().cancel()
       }
