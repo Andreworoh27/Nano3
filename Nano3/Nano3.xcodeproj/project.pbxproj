@@ -39,6 +39,7 @@
 		ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */; };
 		ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */; };
 		ACF7CF852C477895008B1030 /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */; };
+		ACF7CF872C47DE07008B1030 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACF7CF862C47DE07008B1030 /* Localizable.xcstrings */; };
 		B04C95B52C462A5E00A32F30 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C95B42C462A5E00A32F30 /* NotificationManager.swift */; };
 		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,7 @@
 		ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
 		ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbianceBackgroundView.swift; sourceTree = "<group>"; };
 		ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
+		ACF7CF862C47DE07008B1030 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B04C95B42C462A5E00A32F30 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,6 +317,7 @@
 				ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */,
 				ACD18B432C3BE164007AF0C8 /* Assets.xcassets */,
 				ACD18B452C3BE164007AF0C8 /* Preview Content */,
+				ACF7CF862C47DE07008B1030 /* Localizable.xcstrings */,
 			);
 			path = Nano3;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = ACD18B332C3BE162007AF0C8;
 			productRefGroup = ACD18B3D2C3BE162007AF0C8 /* Products */;
@@ -437,6 +441,7 @@
 			files = (
 				ACD18B472C3BE164007AF0C8 /* Preview Assets.xcassets in Resources */,
 				ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */,
+				ACF7CF872C47DE07008B1030 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

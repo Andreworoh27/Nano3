@@ -18,7 +18,7 @@ struct CurrentWeatherView: View {
          
          VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-               Text(viewModel.title)
+               Text(LocalizedStringKey(viewModel.title))
                   .fontWeight(.semibold)
                   .font(.system(size: 20))
                
@@ -33,7 +33,7 @@ struct CurrentWeatherView: View {
                   }
                   .padding(.vertical, 2)
                }
-               Text(viewModel.description)
+               Text(LocalizedStringKey(viewModel.description))
                   .font(.system(size: 14))
                   .padding(.top, 8)
                   .fontWeight(.semibold)

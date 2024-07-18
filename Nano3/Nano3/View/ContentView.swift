@@ -13,7 +13,7 @@ struct ContentView: View {
    
    var body: some View {
       ScrollView {
-//         if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast{
+         if hourlyWeatherViewModel.hourlyForecast != nil {
             VStack(alignment: .leading){
                DailyWeatherView()
                CurrentWeatherView()
@@ -23,7 +23,7 @@ struct ContentView: View {
                HourlyWeatherView()
                   .padding()
             }
-//         }
+         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
       .onAppear(){
