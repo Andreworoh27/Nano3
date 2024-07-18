@@ -8,51 +8,43 @@
 import SwiftUI
 
 struct HourlyWeatherView: View {
-   @StateObject var hourlyWeatherViewModel = HourlyWeatherViewModel.shared
+   @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
    var locationViewModel = LocationViewModel.shared
-//   @Binding var selectedDate: Date
    
    var body: some View {
       VStack(alignment: .leading) {
-         HStack {
-            Image(systemName: "clock")
-            Text("Available Playtime Hours: 6 AM - 6 PM")
-               .fontWeight(.bold)
-         }
-         
          if let hourlyForecast = hourlyWeatherViewModel.hourlyForecast {
-            ForEach(hourlyForecast, id: \.date){ hour in
-
-               HourlyWeatherRowView(hourlyWeather: HourlyWeather(hour: hour.date, condition: hour.condition, uvi: hour.uvIndex.value, uviDesc: hour.uvIndex.category.description, symbol: hour.symbolName))
+            HStack {
+               Image(systemName: "clock")
+               Text("\(hourlyWeatherViewModel.selectedDate!.formatted(date: .complete, time: .omitted))")
+                  .fontWeight(.medium)
+                  .font(.system(size: 16))
+            }
+            
+            ForEach(hourlyForecast, id: \.hour){ hour in
+               HourlyWeatherRowView(hourlyWeather: hour)
             }
          }
       }
       .padding()
       .frame(maxWidth: .infinity, alignment: .leading)
-      .background(.ultraThinMaterial)
+      .background(.ultraThinMaterial.opacity(0.4))
       .clipShape(RoundedRectangle(cornerRadius: 15))
       .foregroundStyle(.white)
-      // kalo datenya ganti
       .onChange(of: hourlyWeatherViewModel.selectedDate, { oldValue, newValue in
-         print("trigger on change")
-         Task{
-            await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate)
+         
+         if(locationViewModel.currentUserLocation != nil)
+         {
+            Task{
+               await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate!)
+            }
          }
       })
-      // biar check kalo location != nil
-      .onChange(of: locationViewModel.currentUserLocation, { oldValue, newValue in
-         //fetch hourly forecast
-         Task{
-            await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: hourlyWeatherViewModel.selectedDate)
-         }
-      })
-//      .task {
-//         await hourlyWeatherViewModel.getHourlyForecast(location:locationViewModel.currentUserLocation!, date: Date.now)
-//      }
    }
 }
 
 #Preview {
    HourlyWeatherView()
       .background(.black)
+      .environmentObject(HourlyWeatherViewModel.shared)
 }

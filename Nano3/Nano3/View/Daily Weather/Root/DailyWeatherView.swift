@@ -1,54 +1,56 @@
-//
-//  HomepageView.swift
-//  Nano3
-//
-//  Created by Paulus Michael on 12/07/24.
-//
-
 import SwiftUI
 import WeatherKit
 
 struct DailyWeatherView: View {
+   @EnvironmentObject var dailyWeatherViewModel: DailyWeatherViewModel
+   @EnvironmentObject var hourlyWeatherViewModel: HourlyWeatherViewModel
    @StateObject var locationViewModel = LocationViewModel.shared
-   @StateObject var dailyWeatherViewModel = DailyWeatherViewModel.shared
-   @StateObject var hourlyWeatherViewModel = HourlyWeatherViewModel.shared
-   //   @Binding var selectedDate: Date
+   @EnvironmentObject var currentWeatherViewModel: CurrentWeatherViewModel
    
    var body: some View {
-      VStack(alignment: .center){
+      VStack(alignment: .center) {
          Text("Currently viewing weather for")
             .foregroundStyle(.white)
             .font(.caption)
          
          Text("\(locationViewModel.cityName)")
-            .fontWeight(.semibold)
+            .fontWeight(.bold)
+            .font(.system(size: 16))
             .foregroundStyle(.white)
          
          ScrollView(.horizontal, showsIndicators: false) {
-            HStack{
+            HStack {
                if let dailyForecast = dailyWeatherViewModel.dailyForecast {
-                  ForEach(dailyForecast, id: \.date){ forecast in
+                  ForEach(dailyForecast, id: \.date) { forecast in
                      DayIconView(date: forecast.date, symbolName: forecast.symbolName)
-                        .background(dailyWeatherViewModel.areDatesSameDay(hourlyWeatherViewModel.selectedDate, forecast.date) ? Material.ultraThinMaterial.opacity(1) : Material.thinMaterial.opacity(0))
+                        .background(dailyWeatherViewModel.areDatesSameDay(hourlyWeatherViewModel.selectedDate ?? Date(), forecast.date) ? Material.ultraThinMaterial.opacity(0.5) : Material.thinMaterial.opacity(0))
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .onTapGesture {
-                           hourlyWeatherViewModel.selectedDate = forecast.date
-                           print(hourlyWeatherViewModel.selectedDate)
+                           DispatchQueue.main.async {
+                              withAnimation(.easeInOut){
+                                 hourlyWeatherViewModel.selectedDate = forecast.date
+                              }
+                           }
                         }
                         .frame(width: 50)
-                     
                   }
                   .padding(.vertical, 19)
                   .foregroundStyle(.white)
                }
             }
          }
+         .padding(.leading)
       }
-      .padding([.top, .leading])
+      .padding([.top])
       .task {
-         //            Task{
-         if let currentUserLocation = locationViewModel.currentUserLocation{
-            await dailyWeatherViewModel.getDailyWeatherForecast(location: currentUserLocation)
+         if let currentUserLocation = locationViewModel.currentUserLocation {
+            
+            await dailyWeatherViewModel.getDailyWeatherForecast(location: currentUserLocation, date: Date())
+            DispatchQueue.main.async {
+               if let todayForecast = dailyWeatherViewModel.dailyForecast?.first(where: { Date.isToday(inputDate: $0.date) }) {
+                  hourlyWeatherViewModel.selectedDate = todayForecast.date
+               }
+            }
          }
       }
    }
@@ -56,5 +58,7 @@ struct DailyWeatherView: View {
 
 #Preview {
    DailyWeatherView()
+      .environmentObject(HourlyWeatherViewModel.shared)
+      .environmentObject(DailyWeatherViewModel.shared)
       .background(.black)
 }

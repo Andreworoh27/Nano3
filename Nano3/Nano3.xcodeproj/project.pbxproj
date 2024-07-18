@@ -11,6 +11,12 @@
 		AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */; };
 		AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */; };
 		AC23CA572C43B50B00A64862 /* DayIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23CA562C43B50B00A64862 /* DayIconView.swift */; };
+		AC360FC02C463933002614D9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC360FBF2C463933002614D9 /* WidgetKit.framework */; };
+		AC360FC22C463933002614D9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC360FC12C463933002614D9 /* SwiftUI.framework */; };
+		AC360FC52C463933002614D9 /* Nano3WidgetExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC360FC42C463933002614D9 /* Nano3WidgetExtensionBundle.swift */; };
+		AC360FC72C463933002614D9 /* Nano3WidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC360FC62C463933002614D9 /* Nano3WidgetExtension.swift */; };
+		AC360FC92C463936002614D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC360FC82C463936002614D9 /* Assets.xcassets */; };
+		AC360FCD2C463936002614D9 /* Nano3WidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AC360FBD2C463933002614D9 /* Nano3WidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */; };
 		AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */; };
 		AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A8BE92C423F4800F50D03 /* LocationViewModel.swift */; };
@@ -27,14 +33,53 @@
 		ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD18B412C3BE162007AF0C8 /* ContentView.swift */; };
 		ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B432C3BE164007AF0C8 /* Assets.xcassets */; };
 		ACD18B472C3BE164007AF0C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */; };
+		ACF7CF7E2C4629E2008B1030 /* AnimationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF792C4629E2008B1030 /* AnimationProperties.swift */; };
+		ACF7CF7F2C4629E2008B1030 /* CircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */; };
+		ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */; };
+		ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */; };
+		ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */; };
+		ACF7CF852C477895008B1030 /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */; };
+		ACF7CF872C47DE07008B1030 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ACF7CF862C47DE07008B1030 /* Localizable.xcstrings */; };
+		B04C95B52C462A5E00A32F30 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C95B42C462A5E00A32F30 /* NotificationManager.swift */; };
 		B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC360FCB2C463936002614D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACD18B342C3BE162007AF0C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC360FBC2C463933002614D9;
+			remoteInfo = Nano3WidgetExtensionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AC360FCE2C463936002614D9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AC360FCD2C463936002614D9 /* Nano3WidgetExtensionExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AC23CA4C2C43944900A64862 /* HourlyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherModel.swift; sourceTree = "<group>"; };
 		AC23CA502C4395D000A64862 /* CurrentWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDelegate.swift; sourceTree = "<group>"; };
 		AC23CA522C43963300A64862 /* DailyWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherDelegate.swift; sourceTree = "<group>"; };
 		AC23CA562C43B50B00A64862 /* DayIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIconView.swift; sourceTree = "<group>"; };
+		AC360FBD2C463933002614D9 /* Nano3WidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Nano3WidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC360FBF2C463933002614D9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AC360FC12C463933002614D9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AC360FC42C463933002614D9 /* Nano3WidgetExtensionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3WidgetExtensionBundle.swift; sourceTree = "<group>"; };
+		AC360FC62C463933002614D9 /* Nano3WidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3WidgetExtension.swift; sourceTree = "<group>"; };
+		AC360FC82C463936002614D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC360FCA2C463936002614D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3A8BE12C42366000F50D03 /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
 		AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceManager.swift; sourceTree = "<group>"; };
 		AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceManager.swift; sourceTree = "<group>"; };
@@ -53,10 +98,27 @@
 		ACD18B412C3BE162007AF0C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACD18B432C3BE164007AF0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACF7CF792C4629E2008B1030 /* AnimationProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationProperties.swift; sourceTree = "<group>"; };
+		ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimator.swift; sourceTree = "<group>"; };
+		ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
+		ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
+		ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbianceBackgroundView.swift; sourceTree = "<group>"; };
+		ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
+		ACF7CF862C47DE07008B1030 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		B04C95B42C462A5E00A32F30 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B0D38E572C450B81005E5B2B /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC360FBA2C463933002614D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC360FC22C463933002614D9 /* SwiftUI.framework in Frameworks */,
+				AC360FC02C463933002614D9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACD18B392C3BE162007AF0C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,12 +169,34 @@
 			path = "Custom Components";
 			sourceTree = "<group>";
 		};
+		AC360FBE2C463933002614D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC360FBF2C463933002614D9 /* WidgetKit.framework */,
+				AC360FC12C463933002614D9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC360FC32C463933002614D9 /* Nano3WidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AC360FC42C463933002614D9 /* Nano3WidgetExtensionBundle.swift */,
+				AC360FC62C463933002614D9 /* Nano3WidgetExtension.swift */,
+				AC360FC82C463936002614D9 /* Assets.xcassets */,
+				AC360FCA2C463936002614D9 /* Info.plist */,
+			);
+			path = Nano3WidgetExtension;
+			sourceTree = "<group>";
+		};
 		AC3A8BE32C42391C00F50D03 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				AC3A8BE42C423A7500F50D03 /* WeatherServiceManager.swift */,
 				AC3A8BE62C423A8000F50D03 /* LocationServiceManager.swift */,
 				AC3A8C172C4278F200F50D03 /* DateExtension.swift */,
+				B04C95B42C462A5E00A32F30 /* NotificationManager.swift */,
+				ACF7CF842C477895008B1030 /* SegmentedProgressView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -170,6 +254,7 @@
 				ACBBEAD12C40FD1D00761678 /* Current Weather */,
 				ACBBEAD02C40F6B700761678 /* Daily Weather */,
 				ACD18B412C3BE162007AF0C8 /* ContentView.swift */,
+				ACF7CF822C462B69008B1030 /* AmbianceBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				ACD18B3E2C3BE162007AF0C8 /* Nano3 */,
+				AC360FC32C463933002614D9 /* Nano3WidgetExtension */,
+				AC360FBE2C463933002614D9 /* Frameworks */,
 				ACD18B3D2C3BE162007AF0C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -212,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				ACD18B3C2C3BE162007AF0C8 /* Nano3.app */,
+				AC360FBD2C463933002614D9 /* Nano3WidgetExtensionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,6 +307,7 @@
 		ACD18B3E2C3BE162007AF0C8 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				ACF7CF7D2C4629E2008B1030 /* Ambiance */,
 				AC3A8BEB2C423F9700F50D03 /* Protocols */,
 				AC3A8BE32C42391C00F50D03 /* Utility */,
 				AC3A8BE82C423F3F00F50D03 /* ViewModel */,
@@ -228,6 +317,7 @@
 				ACD18B3F2C3BE162007AF0C8 /* Nano3App.swift */,
 				ACD18B432C3BE164007AF0C8 /* Assets.xcassets */,
 				ACD18B452C3BE164007AF0C8 /* Preview Content */,
+				ACF7CF862C47DE07008B1030 /* Localizable.xcstrings */,
 			);
 			path = Nano3;
 			sourceTree = "<group>";
@@ -238,6 +328,17 @@
 				ACD18B462C3BE164007AF0C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACF7CF7D2C4629E2008B1030 /* Ambiance */ = {
+			isa = PBXGroup;
+			children = (
+				ACF7CF792C4629E2008B1030 /* AnimationProperties.swift */,
+				ACF7CF7A2C4629E2008B1030 /* CircleAnimator.swift */,
+				ACF7CF7B2C4629E2008B1030 /* GradientColors.swift */,
+				ACF7CF7C2C4629E2008B1030 /* MovingCircle.swift */,
+			);
+			path = Ambiance;
 			sourceTree = "<group>";
 		};
 		B0D38E562C450B71005E5B2B /* Current Weather */ = {
@@ -251,6 +352,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AC360FBC2C463933002614D9 /* Nano3WidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC360FD12C463936002614D9 /* Build configuration list for PBXNativeTarget "Nano3WidgetExtensionExtension" */;
+			buildPhases = (
+				AC360FB92C463933002614D9 /* Sources */,
+				AC360FBA2C463933002614D9 /* Frameworks */,
+				AC360FBB2C463933002614D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nano3WidgetExtensionExtension;
+			productName = Nano3WidgetExtensionExtension;
+			productReference = AC360FBD2C463933002614D9 /* Nano3WidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		ACD18B3B2C3BE162007AF0C8 /* Nano3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACD18B4A2C3BE164007AF0C8 /* Build configuration list for PBXNativeTarget "Nano3" */;
@@ -258,10 +376,12 @@
 				ACD18B382C3BE162007AF0C8 /* Sources */,
 				ACD18B392C3BE162007AF0C8 /* Frameworks */,
 				ACD18B3A2C3BE162007AF0C8 /* Resources */,
+				AC360FCE2C463936002614D9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AC360FCC2C463936002614D9 /* PBXTargetDependency */,
 			);
 			name = Nano3;
 			productName = Nano3;
@@ -278,6 +398,9 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					AC360FBC2C463933002614D9 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					ACD18B3B2C3BE162007AF0C8 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -290,6 +413,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = ACD18B332C3BE162007AF0C8;
 			productRefGroup = ACD18B3D2C3BE162007AF0C8 /* Products */;
@@ -297,43 +421,69 @@
 			projectRoot = "";
 			targets = (
 				ACD18B3B2C3BE162007AF0C8 /* Nano3 */,
+				AC360FBC2C463933002614D9 /* Nano3WidgetExtensionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC360FBB2C463933002614D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC360FC92C463936002614D9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACD18B3A2C3BE162007AF0C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ACD18B472C3BE164007AF0C8 /* Preview Assets.xcassets in Resources */,
 				ACD18B442C3BE164007AF0C8 /* Assets.xcassets in Resources */,
+				ACF7CF872C47DE07008B1030 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AC360FB92C463933002614D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC360FC52C463933002614D9 /* Nano3WidgetExtensionBundle.swift in Sources */,
+				AC360FC72C463933002614D9 /* Nano3WidgetExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACD18B382C3BE162007AF0C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ACBBEACA2C40F23200761678 /* DailyWeatherView.swift in Sources */,
 				AC23CA532C43963300A64862 /* DailyWeatherDelegate.swift in Sources */,
+				B04C95B52C462A5E00A32F30 /* NotificationManager.swift in Sources */,
 				ACBBEAD32C40FD9300761678 /* CurrentWeatherView.swift in Sources */,
 				AC3A8BED2C423FAF00F50D03 /* LocationManagerDelegate.swift in Sources */,
 				ACB85C302C44143C00BBD445 /* HourlyWeatherDelegate.swift in Sources */,
+				ACF7CF7E2C4629E2008B1030 /* AnimationProperties.swift in Sources */,
 				ACBBEAD62C41064500761678 /* HourlyWeatherView.swift in Sources */,
+				ACF7CF802C4629E2008B1030 /* GradientColors.swift in Sources */,
 				AC23CA572C43B50B00A64862 /* DayIconView.swift in Sources */,
 				AC3A8BE72C423A8000F50D03 /* LocationServiceManager.swift in Sources */,
+				ACF7CF832C462B6A008B1030 /* AmbianceBackgroundView.swift in Sources */,
+				ACF7CF812C4629E2008B1030 /* MovingCircle.swift in Sources */,
 				ACD18B422C3BE162007AF0C8 /* ContentView.swift in Sources */,
 				AC3A8C182C4278F200F50D03 /* DateExtension.swift in Sources */,
 				AC23CA512C4395D000A64862 /* CurrentWeatherDelegate.swift in Sources */,
 				AC9208882C449EA10049B90A /* HourlyWeatherRowView.swift in Sources */,
+				ACF7CF7F2C4629E2008B1030 /* CircleAnimator.swift in Sources */,
 				ACB85C322C44651D00BBD445 /* HourlyWeatherViewModel.swift in Sources */,
 				AC23CA4D2C43944900A64862 /* HourlyWeatherModel.swift in Sources */,
 				AC3A8BE52C423A7500F50D03 /* WeatherServiceManager.swift in Sources */,
 				B0D38E582C450B81005E5B2B /* CurrentWeatherViewModel.swift in Sources */,
+				ACF7CF852C477895008B1030 /* SegmentedProgressView.swift in Sources */,
 				ACD18B402C3BE162007AF0C8 /* Nano3App.swift in Sources */,
 				AC3A8BEA2C423F4900F50D03 /* LocationViewModel.swift in Sources */,
 				AC3A8C142C425C8200F50D03 /* DailyWeatherViewModel.swift in Sources */,
@@ -342,7 +492,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AC360FCC2C463936002614D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC360FBC2C463933002614D9 /* Nano3WidgetExtensionExtension */;
+			targetProxy = AC360FCB2C463936002614D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AC360FCF2C463936002614D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARLGKL6RC3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nano3WidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nano3WidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulusmichael.Nano3WidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC360FD02C463936002614D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARLGKL6RC3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nano3WidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nano3WidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulusmichael.Nano3WidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		ACD18B482C3BE164007AF0C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -395,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -452,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -465,6 +679,7 @@
 		ACD18B4B2C3BE164007AF0C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Nano3/Nano3.entitlements;
@@ -474,6 +689,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SunSense;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -481,7 +697,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,6 +714,7 @@
 		ACD18B4C2C3BE164007AF0C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Nano3/Nano3.entitlements;
@@ -507,6 +724,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SunSense;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For app purpose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -514,7 +732,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,6 +749,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AC360FD12C463936002614D9 /* Build configuration list for PBXNativeTarget "Nano3WidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC360FCF2C463936002614D9 /* Debug */,
+				AC360FD02C463936002614D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ACD18B372C3BE162007AF0C8 /* Build configuration list for PBXProject "Nano3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

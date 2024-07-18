@@ -8,31 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
-   @State var selectedDate: Date = Date()
+   @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
+   @ObservedObject var notificationManager = NotificationManager()
    
    var body: some View {
       ScrollView {
-         VStack(alignment: .leading){
-            DailyWeatherView()
-//             CurrentWeatherView(
-//                         viewModel: CurrentWeatherViewModel(
-//                             title: "Best times to play outdoors",
-//                             date: "Today on July 10th",
-//                             timeRange: "06:00 - 11:00",
-//                             description: "Enjoy outdoor playtime with your kids during these safe UV hours, with gentler sun and less risk of sunburn!"
-//                         )
-//                     )
-//            .padding(.horizontal)
-            
-            HourlyWeatherView()
-               .padding()
+         if hourlyWeatherViewModel.hourlyForecast != nil {
+            VStack(alignment: .leading){
+               DailyWeatherView()
+               CurrentWeatherView()
+                  .clipShape(RoundedRectangle(cornerRadius: 12))
+                  .padding(.horizontal)
+               
+               HourlyWeatherView()
+                  .padding()
+            }
          }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-      .background(.blue)
+      .onAppear(){
+         if notificationManager.isNotifAuthGiven == false {
+            notificationManager.requestNotifPermission()
+         }
+      }
+      .background(
+         Image(.sunny)
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea()
+      )
    }
 }
 
 #Preview {
    ContentView()
+      .environmentObject(HourlyWeatherViewModel.shared)
+      .environmentObject(DailyWeatherViewModel.shared)
+      .environmentObject(CurrentWeatherViewModel.shared)
 }
