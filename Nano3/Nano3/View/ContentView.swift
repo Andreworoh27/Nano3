@@ -12,22 +12,32 @@ struct ContentView: View {
    @ObservedObject var notificationManager = NotificationManager()
    
    var body: some View {
-      ScrollView {
-         if hourlyWeatherViewModel.hourlyForecast != nil {
-            VStack(alignment: .leading){
-               DailyWeatherView()
-               CurrentWeatherView()
-                  .clipShape(RoundedRectangle(cornerRadius: 12))
-                  .padding(.horizontal)
-               
-               HourlyWeatherView()
-                  .padding()
+      VStack{
+         if hourlyWeatherViewModel.isLoading{
+            ProgressView()
+               .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+         }else{
+            ScrollView {
+               if hourlyWeatherViewModel.hourlyForecast != nil {
+                  VStack(alignment: .leading){
+                     DailyWeatherView()
+                     
+                     CurrentWeatherView()
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .padding(.horizontal)
+                     
+                     HourlyWeatherView()
+                        .padding()
+                  }
+               }
             }
          }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
       .onAppear(){
-         if notificationManager.isNotifAuthGiven == false {
+         //         print("Notification")
+         if !UserDefaults.standard.bool(forKey: "isNotifAuthGiven") {
             notificationManager.requestNotifPermission()
          }
       }
