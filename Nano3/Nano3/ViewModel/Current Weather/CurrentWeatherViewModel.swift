@@ -52,13 +52,17 @@ class CurrentWeatherViewModel: ObservableObject {
       }
       
       if let start = bestStart, let end = bestEnd {
-         self.timeRange = "\(start.formattedHourMinute) - \(end.formattedHourMinute)"
-         self.title = "Best times to play outdoors"
-         self.description = "Enjoy outdoor playtime with your kids during  these safe UV hours, with gentler sun  and less risk of sunburn!"
+         DispatchQueue.main.async{
+            self.timeRange = "\(start.formattedHourMinute) - \(end.formattedHourMinute)"
+            self.title = "Best times to play outdoors"
+            self.description = "Enjoy outdoor playtime with your kids during  these safe UV hours, with gentler sun  and less risk of sunburn!"
+         }
       } else {
-//         self.timeRange = "No suitable time frame found"
-         self.title = "Indoor play day"
-         self.description = "Rainy day? Make it special with  indoor games and activities with your kids!"
+         //         self.timeRange = "No suitable time frame found"
+         DispatchQueue.main.async{
+            self.title = "Indoor play day"
+            self.description = "Rainy day? Make it special with  indoor games and activities with your kids!"
+         }
       }
    }
 }
