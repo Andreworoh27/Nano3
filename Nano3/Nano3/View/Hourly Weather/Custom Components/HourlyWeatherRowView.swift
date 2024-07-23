@@ -33,7 +33,7 @@ struct HourlyWeatherRowView: View {
                   .font(.system(size: 12))
                   .fontWeight(.semibold)
                
-               SegmentedProgressView(value: Double(hourlyWeather.uvi), maxValue: 10, segmentCount: 5, color: hourlyWeather.uviColor)
+               SegmentedProgressView(value: Double(hourlyWeather.uvi), color: hourlyWeather.uviColor, desc: hourlyWeather.uviDesc)
                   .frame(width: 100)
             }
             

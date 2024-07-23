@@ -12,10 +12,23 @@ struct SegmentedProgressView: View {
    var maxValue: Double = 10.0
    var segmentCount: Int = 5
    var color: Color
+   var desc: String
    
    private var filledSegments: Int {
-      let segments = max(Int((value / maxValue) * Double(segmentCount)), 1)
-      return min(segments, segmentCount)
+      switch desc {
+      case NSLocalizedString("Low", comment: ""):
+         return 1
+      case NSLocalizedString("Moderate", comment: ""):
+         return 2
+      case NSLocalizedString("High", comment: ""):
+         return 3
+      case NSLocalizedString("Very High", comment: ""):
+         return 4
+      case NSLocalizedString("Extreme", comment: ""):
+         return 5
+      default:
+         return 0
+      }
    }
    
    var body: some View {
@@ -51,6 +64,6 @@ struct SegmentedProgressView: View {
 
 
 #Preview {
-   SegmentedProgressView(value: 3, color: .green)
+   SegmentedProgressView(value: 3, color: .green, desc: "Low")
       .frame(width: 100)
 }

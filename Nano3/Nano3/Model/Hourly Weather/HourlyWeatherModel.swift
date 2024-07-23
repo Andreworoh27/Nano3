@@ -39,15 +39,15 @@ class HourlyWeather: Identifiable {
 extension HourlyWeather {
    var uviColor: Color {
       switch uviDesc {
-      case "Low":
+      case NSLocalizedString("Low", comment: ""):
          return Color.green
-      case "Moderate":
+      case NSLocalizedString("Moderate", comment: ""):
          return Color.yellow
-      case "High":
+      case NSLocalizedString("High", comment: ""):
          return Color.orange
-      case "Very High":
+      case NSLocalizedString("Very High", comment: ""):
          return Color.red
-      case "Extreme":
+      case NSLocalizedString("Extreme", comment: ""):
          return Color.purple
       default:
          return Color.gray

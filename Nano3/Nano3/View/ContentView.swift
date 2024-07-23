@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
    @EnvironmentObject var hourlyWeatherViewModel : HourlyWeatherViewModel
+   @EnvironmentObject var dailyWeatherViewModel : DailyWeatherViewModel
    @ObservedObject var notificationManager = NotificationManager()
    
    var body: some View {
       VStack{
-         if hourlyWeatherViewModel.isLoading{
+         if hourlyWeatherViewModel.isLoading && dailyWeatherViewModel.isLoading{
             ProgressView()
                .frame(maxWidth: .infinity, maxHeight: .infinity)
             
