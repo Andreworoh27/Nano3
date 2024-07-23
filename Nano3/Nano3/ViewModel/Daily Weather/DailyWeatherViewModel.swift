@@ -15,10 +15,13 @@ class DailyWeatherViewModel: ObservableObject{
    @Published var dailyForecast : [DayWeather]?
    @Published var hourlyForecast: [HourWeather]?
    
+   @Published var isLoading = true
+   
    private var weatherServiceManager : DailyWeatherDelegate
    
    init(){
       weatherServiceManager = WeatherServiceManager()
+      isLoading = true
    }
    
    func getDailyWeatherForecast(location : CLLocation, date: Date) async {
@@ -26,6 +29,7 @@ class DailyWeatherViewModel: ObservableObject{
       
       DispatchQueue.main.async{
          self.dailyForecast = fetched
+         self.isLoading = false
       }
    }
    
