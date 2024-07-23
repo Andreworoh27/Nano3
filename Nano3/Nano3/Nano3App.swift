@@ -19,7 +19,9 @@ struct Nano3App: App {
    var body: some Scene {
       WindowGroup {
          ContentView()
-            .onAppear(){
+            .onChange(of: locationViewModel.currentUserLocation){ _, _ in
+               //               print("Location changed")
+               
                Task{
                   await fetchInitialHourlyForecast()
                }

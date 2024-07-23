@@ -14,14 +14,15 @@ struct SegmentedProgressView: View {
    var color: Color
    
    private var filledSegments: Int {
-      return min(Int((value / maxValue) * Double(segmentCount)), segmentCount)
+      let segments = max(Int((value / maxValue) * Double(segmentCount)), 1)
+      return min(segments, segmentCount)
    }
    
    var body: some View {
       GeometryReader { geometry in
          ZStack(alignment: .leading) {
             HStack(spacing: 1) {
-               ForEach(0..<segmentCount) { _ in
+               ForEach(0..<segmentCount, id: \.self) { _ in
                   Rectangle()
                      .fill(Color.white.opacity(0.7))
                      .frame(width: (geometry.size.width - CGFloat(segmentCount - 1) * 1) / CGFloat(segmentCount))
